@@ -4,35 +4,36 @@ set more off
 set varabbrev off
 
 * Assessment: individual checkpoint 2 of 4; 10% of the overall course grade.
-* Run from the project root after the prepared data files have been supplied
-* or created. This exercise uses only the 2018 prices, not both years.
+* Lecture 3: combining data only. Reshaping is optional; no regression is required.
+* Run from the project root after the prepared data have been supplied or created.
 capture mkdir "output"
-capture mkdir "output/tables"
+capture mkdir "output/logs"
+capture log close exercise03
+log using "output/logs/session03_exercise.log", name(exercise03) text replace
 use "data/derived/hotel_features.dta", clear
 
-* Variation: start with one row per hotel rather than repeated price quotes.
-* Then reshape a summary table, not the individual hotel/search observations.
+* Variation: start with one row per hotel and merge in only the 2018 prices,
+* instead of appending both years and starting from repeated price quotes.
 
 * TODO 1: Verify that hotel_id uniquely identifies the feature records.
-* Explain in a comment why hotel_id need not be unique in a price file.
+* Explain why hotel_id alone need not be unique in the price file.
 
-* TODO 2: With features still in memory, merge in hotel_prices_2018.dta from
-* data/derived. Use help merge to select the cardinality for this direction.
+* TODO 2: With features still in memory, merge hotel_prices_2018.dta from
+* data/derived. Consult help merge to choose the cardinality in this direction.
 
-* TODO 3: Tabulate _merge and count feature records without a 2018 quote.
-* Explain what these unmatched records mean; do not assume all records match.
-* Verify that no price quote lacks features. Keep matched observations for
-* the price summary, then remove _merge.
+* TODO 3: Tabulate _merge and count hotels without a 2018 quote. Explain
+* what those unmatched records mean. Verify that no price quote lacks features.
+* Keep matched observations for the price analysis, then remove _merge.
 
-* TODO 4: Generate price_per_night. Collapse its mean (mean_price) and
-* nonmissing quote count (price_quotes) by city and month. Verify the new key.
-* These are quote counts, not counts of distinct hotels.
+* TODO 4: Verify the combined key hotel_id year month weekend holiday nnights.
+* Generate price_per_night from price and nnights and label it with its unit.
+* Count and summarize the matched quotes. Explain why a row counts a quote,
+* not a distinct hotel. Do not overwrite any input or the lecture's saved panel.
 
-* TODO 5: Reshape both summary variables wide: one row per city, with month
-* identifying the columns. List the result and explain one column suffix.
+* Optional: use preserve/restore to collapse to city/month mean nightly prices
+* and nonmissing quote counts. Verify the new key and reshape wide and back.
+* See optional-reshaping.do and help collapse / help reshape.
+* This extension is not required for checkpoint 2 or the exam.
 
-* TODO 6: Reshape back to long, verify the city/month key, and export
-* output/tables/session03_exercise_city_month.csv. Add a comment explaining
-* why this table needs a different reshape key from the lecture's hotel panel.
-
-display as text "Complete the TODO items and submit your reproducible do-file."
+display as text "Submit your completed do-file and session03_exercise.log."
+log close exercise03

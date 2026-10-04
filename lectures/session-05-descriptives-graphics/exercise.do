@@ -4,38 +4,50 @@ set more off
 set varabbrev off
 
 * Assessment: individual checkpoint 4 of 4; 10% of the overall course grade.
+* Lecture 5, 12 October 2026. Allow 25 minutes.
+* Run from the project root using the prepared analysis dataset.
 capture mkdir "output"
-capture mkdir "output/figures"
-capture mkdir "output/tables"
+capture mkdir "output/logs"
+capture log close session05_exercise
+log using "output/logs/session05_exercise.log", name(session05_exercise) text replace
+
 use "data/derived/hotel_panel.dta", clear
+keep if accommodation_type == "Hotel"
 
-* Transfer task: the lecture compared cities using means and graphed price against
-* distance. Investigate Budapest using medians, star categories, and guest ratings.
-* Work with price quotes: a hotel can appear more than once. Allow about 20-25 minutes.
+* Variation: use the central_hotel indicator instead of continuous distance.
+* The model relates log nightly price to being within 2 miles of the center,
+* controlling for rating, stars, city, and weekend. It describes association.
+* Use vce(cluster hotel_id) in every regression: a hotel has repeated quotes.
 
-* TODO 1: Keep Budapest Hotels with nonmissing price_per_night, stars, and rating,
-*         and require 0 < price_per_night <= 1000. Count the retained quotes and
-*         validate these rules with assert. Use this same sample for every output.
-*         Help: help keep; help f_missing; help assert.
-* TODO 2: Export a table with the number of price quotes, median nightly price,
-*         and the 25th and 75th price percentiles for each star category. Name it
-*         output/tables/session05_exercise_star_summary.csv. Preserve and restore
-*         the quote-level data around collapse; do not overwrite the input dataset.
-*         Help: help collapse (count, median, p25, p75); help preserve.
-* TODO 3: Use graph box to compare the distribution of price_per_night across
-*         star categories. Export output/figures/session05_exercise_star_box.png.
-*         Look up what the box, central line, whiskers, and outside points mean;
-*         whiskers need not reach the minimum and maximum.
-*         Help: help graph box (especially over()); help graph export.
-* TODO 4: Make a scatter plot of nightly price against guest rating in this same
-*         sample. Export output/figures/session05_exercise_rating_scatter.png.
-*         Help: help twoway scatter (the order is outcome, then horizontal variable).
-* TODO 5: Give both figures informative titles, axes, and units. State Budapest,
-*         the price limit, and that observations are repeated price quotes, not
-*         distinct hotels. Help: help title_options; help axis_title_options.
-* TODO 6: In comments, compare median prices for two star categories using your
-*         table, describe their spread using the box plot, and state what the
-*         rating scatter adds. Describe associations, not causal effects; explain
-*         why the table's count is a count of quotes rather than unique hotels.
+* TODO 1: Inspect ln_price, central_hotel, rating, stars, city_id, and weekend.
+* Consult help regress and help fvvarlist as needed. Define a common-sample
+* indicator excluding missing values in these variables and hotel_id.
+* Use this same indicator in every model below; add the price cutoff separately.
 
-display as text "Submit the do-file, star-summary CSV, and two exercise figures."
+* TODO 2: Define local macros for the outcome, predictors, and upper price
+* cutoffs 100, 200, and 500. Use factor-variable notation for central_hotel,
+* city_id, and weekend. Display the outcome and predictors to check the text.
+
+* TODO 3: Write a foreach loop over the cutoffs. Run the regression on the
+* common sample with price_per_night at or below the current cutoff.
+* Display the cutoff and e(N) immediately after each regression. Also report
+* the coefficient comparing central with noncentral hotels; use the coefficient
+* name shown in the regression output. Do not permanently filter the dataset.
+
+* TODO 4: Manually write and run the full regression for one cutoff, without
+* using macros for the outcome, predictors, or cutoff. Compare its observation
+* count and central-hotel coefficient with that loop iteration. Record the
+* comparison in a comment. Explain why this check is more useful than merely
+* observing that the loop runs without an error.
+
+* TODO 5: In two or three sentences, explain what happens to the sample and
+* the estimated central-hotel association as the cutoff changes. N counts
+* price quotes, not unique hotels. These are different samples selected on
+* price; do not interpret a coefficient change as a causal effect of the cutoff.
+
+* TODO 6: Interpret the central-hotel coefficient from your manually checked
+* model in log-price or approximate percentage terms, holding controls fixed.
+* Briefly explain why standard errors are clustered by hotel.
+
+display as text "Complete the TODO items and submit your do-file and log."
+log close session05_exercise

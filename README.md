@@ -5,14 +5,19 @@ The course meets on Mondays from 08:50 to 10:30, 14 September–19 October 2026.
 
 The repository supports five hands-on teaching sessions and a final in-class exam in the
 sixth meeting. Students work with real hotel-price data prepared for *Data Analysis for
-Business, Economics, and Policy* while learning to import, clean, combine, reshape,
-summarize, and visualize data reproducibly with do-files.
+Business, Economics, and Policy* while learning to import, clean, combine, and analyze
+data reproducibly with do-files. The revised sequence is **combine data →
+run regressions manually → automate repeated regressions**. Reshaping is optional.
 
 ## Repository structure
 
-- `lectures/`: teaching materials for Sessions 1–5, with an annotated lecture do-file,
-  a student exercise, and a short guide. The existing Session 6 regression and resampling
-  files are supplementary material, not the final exam or required exam preparation.
+- `lectures/`: topic modules with an annotated lecture do-file, a student exercise, and
+  a short guide. Existing folder numbers are retained for stable links. On **5 October**,
+  use Lecture 3 in `session-03-combining-reshaping` for combining, then the separate
+  Lecture 4 in `session-04-programming` for regressions. On **12 October**, use
+  Lecture 5 in `session-05-descriptives-graphics` for local macros and loops.
+  The former graphics materials remain optional, ungraded reference.
+  The Session 6 files extend regression to margins and resampling; those extensions are optional.
 - `data/raw/`: attributed hotel CSV files committed for reliable offline teaching.
 - `data/derived/`: generated Stata datasets; not committed.
 - `scripts/`: the reproducible build pipeline and master do-file.
@@ -38,7 +43,8 @@ summarize, and visualize data reproducibly with do-files.
    ```
 
 To work on one class, open its `lecture.do` or `exercise.do` file from the corresponding
-folder under `lectures/`.
+folder under `lectures/`. The master workflow also verifies optional examples; running
+a file as part of that workflow does not make its topics required.
 
 ## Reproducibility contract
 
@@ -60,9 +66,12 @@ is not the exercise objective. Each session guide identifies its variation and r
 input files. Exercise outputs have their own names and never replace lecture outputs.
 
 The course is Pass/Fail. Session 1 has ungraded practice. Four individual in-class
-checkpoints, completed in Sessions 2–5, each contribute 10% of the course score (40% in
-total). The final in-class exam in Session 6 on 19 October contributes 60% and covers
-material taught in Sessions 1–5. A total score of 60 or more is required to pass.
+checkpoints during the teaching meetings each contribute 10% of the course score (40% in
+total). Checkpoint 2 covers combining, checkpoint 3 regression, and checkpoint 4
+regression automation. Submission details and any make-up arrangements are announced in class. The final in-class exam in Session 6 on 19 October (08:50–10:30) contributes 60% and covers
+material taught in the five teaching meetings, including introductory regression and
+regression automation. Reshaping, custom programs, the optional graphics extensions, margins, and resampling are optional
+and outside the exam scope. A total score of 60 or more is required to pass.
 
 See the syllabus for the assessment outline. Detailed exam instructions will be provided
 by the instructor separately.

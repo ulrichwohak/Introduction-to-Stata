@@ -12,8 +12,8 @@
 
 **Content.** This course introduces Stata as a reproducible research environment. Students
 learn to organize a project, write and run do-files, import and validate data, clean and
-transform variables, combine and reshape datasets, automate repeated tasks, produce
-descriptive output and graphics, and carry out a descriptive analysis. The five teaching
+transform variables, combine datasets, run and interpret regressions, automate repeated
+regressions, and interpret descriptive and regression output. Reshaping is an optional extension. The five teaching
 sessions contribute to one complete workflow that can be rerun from raw data. The sixth
 meeting is the final in-class exam.
 
@@ -65,17 +65,19 @@ By the end of the course, students will be able to:
 - Diagnose and correct unit-bearing strings, missing values, duplicate records, and invalid
   values.
 - Generate, label, and verify transformed variables using documented assumptions.
-- Append, merge, reshape, and aggregate data while checking that the resulting unit of
-  observation is correct.
-- Automate repeated work with local macros, loops, conditions, and a small reusable Stata
-  program.
-- Produce descriptive tables and purposeful graphics and export them reproducibly.
+- Append and merge data while checking keys, match results, and the resulting unit of
+  observation.
+- Run simple and multiple regressions, use categorical controls and log outcomes, and
+  interpret coefficients and sample sizes as descriptive associations.
+- Automate repeated regressions with local macros and loops, and verify an iteration
+  against a manually specified regression.
+- Read descriptive summaries and regression output and record results reproducibly.
 - Read unfamiliar Stata output and documentation and explain every submitted command and
   analytic decision.
 
-Supplementary materials introduce regression, adjusted predictions, and resampling. These
-are available for further study and are outside the exam scope for the five-session
-teaching plan.
+Optional materials cover reshaping, custom programs, additional graphics, adjusted predictions, and resampling.
+These extensions are outside the exam scope. Basic regression is part of the core teaching
+sequence, before programming.
 
 ## Learning activities and teaching methods
 
@@ -90,9 +92,11 @@ The teaching sessions have two connected components:
 1. An annotated lecture do-file introduces the session's concepts.
 2. An exercise applies a variation of those concepts to real, anonymized hotel-price data.
 
-Session 1's exercise is ungraded practice. In Sessions 2–5, students submit an individual,
-reproducible exercise attempt as the graded checkpoint. There is no checkpoint in the exam
-meeting.
+Session 1's exercise is ungraded practice. Four individual, reproducible exercise attempts
+form the graded checkpoints during the teaching meetings. Checkpoint identifiers and
+weights are retained. The revised checkpoints cover cleaning, combining, regression,
+and regression automation. Submission details and any make-up arrangements are announced in class.
+There is no checkpoint in the exam meeting.
 
 The course uses hotel data prepared for Békés and Kézdi's Data Analysis for Business,
 Economics, and Policy. The source anonymized and slightly altered hotel records to protect
@@ -106,8 +110,8 @@ higher** is required to pass.
 
 | Component | Weight | Detail |
 | --- | ---: | --- |
-| In-class checkpoints | 40% | Four short individual do-files in Sessions 2–5, each worth 10% of the total course score. Assessed for a reasonable, reproducible attempt. |
-| Final in-class exam | 60% | Individual exam in Session 6 on 19 October, covering the material taught in Sessions 1–5. |
+| In-class checkpoints | 40% | Four short individual do-files during the teaching meetings, each worth 10% of the total course score. Assessed for a reasonable, reproducible attempt. |
+| Final in-class exam | 60% | Individual exam in Session 6 on 19 October, 08:50–10:30, covering the material taught in the five teaching meetings. |
 
 Session 1 is ungraded practice. Session 6 has the final exam and no checkpoint. The
 four checkpoints and the final exam are the only graded components.
@@ -127,8 +131,9 @@ attempt is. Submission instructions and any make-up procedure are announced in c
 
 ### Final in-class exam
 
-The individual final exam takes place during Session 6 on 19 October 2026. It assesses
-the Stata concepts and reproducible workflow taught in Sessions 1–5. There is no new
+The individual final exam takes place during Session 6 on Monday, 19 October 2026,
+08:50–10:30. This is the original scheduled exam slot and is unchanged. It assesses
+the Stata concepts and reproducible workflow taught in the five teaching meetings. There is no new
 lecture or separate checkpoint in this meeting.
 
 The exam format, duration within the scheduled meeting, task-level marking scheme,
@@ -149,58 +154,69 @@ submitted line and conclusion.
 
 ## Course contents and schedule
 
-### Session 1 — 14 September · Stata workflow
+Lectures 1 and 2 and their exercises remain unchanged. The revised sequence keeps
+three separate lecture files: **combining data**, **running and interpreting
+regressions**, and **automating regressions**. Lecture-folder names are retained
+for stable links; their numbers identify material rather than separate remaining dates.
 
-- Stata's data, command, results, and do-file workflow.
-- Repository structure, relative paths, logs, and generated output.
-- Importing a CSV; `describe`, `codebook`, `summarize`, `tabulate`, and `list`.
-- Candidate keys, duplicate reports, labels, compression, and saving `.dta` files.
-- Ungraded practice: load the saved `.dta` file, inspect different fields, and compare
-  star-category subsamples.
+### Workflow and cleaning foundations
 
-### Session 2 — 21 September · Cleaning and transforming
+- Stata's data, command, results, and do-file workflow; relative paths and logs.
+- Importing, inspecting, and saving data; candidate keys and duplicate reports.
+- Parsing strings, numeric conversion, missing values, labels, units, and assertions.
+- Materials: `session-01-stata-workflow` and `session-02-cleaning-transforming`.
+- Workflow exercise: ungraded. Cleaning exercise: checkpoint 1 (10%).
 
-- Diagnosing missingness, duplicate hotel records, and inconsistent strings.
-- Parsing distances, guest ratings, accommodation types, and night counts.
-- Numeric conversion, missing-value decisions, labels, and units.
-- Assertions as executable documentation of data expectations.
-- Checkpoint 1 (10%): clean alternative distance/rating fields, convert units, and validate
-  hotel records.
+### Lecture 3 Combining data
 
-### Session 3 — 28 September · Combining and reshaping
+- Taught on 5 October, before the separate regression lecture.
+- Distinguish hotel attributes from repeated price quotes; identify keys.
+- Append annual price extracts, merge hotel attributes, and inspect `_merge`.
+- Construct nightly price and save the full combined panel.
+- Checkpoint 2 (10%): reverse the merge direction using only 2018 prices and validate
+  the result. No regression or reshaping is required.
+- Materials: `session-03-combining-reshaping`. Reshaping is optional.
 
-- Unit of observation and key structure.
-- Appending annual hotel-price extracts and validating stacked records.
-- Many-to-one merges of repeated prices and hotel attributes; interpretation of `_merge`.
-- Wide and long search-date data, `reshape`, and `collapse`.
-- Checkpoint 2 (10%): reverse the merge perspective and reshape city-month aggregates.
+### Lecture 4 Running and interpreting regressions
 
-### Session 4 — 5 October · Programming in Stata
+- Taught on 5 October, after Lecture 3.
+- Run simple and multiple regressions manually on the same complete sample.
+- Interpret coefficients in their units and distinguish association from causation.
+- Add categorical controls and change the outcome to log nightly price.
+- Distinguish price quotes from hotels; cluster standard errors by hotel.
+- Checkpoint 3 (10%): use rating as the main predictor, compare specifications,
+  and interpret results. No macros or loops are required.
+- Materials: `session-04-programming`; the folder name is retained for existing links.
 
-- Local macros and evaluation with backticks and apostrophes.
-- `foreach` and `forvalues` loops for genuinely repeated work.
-- Conditional execution based on data and stored results.
-- Small r-class programs, `syntax`, `marksample`, and returned scalars.
-- Checkpoint 3 (10%): automate cutoff comparisons with a reusable spread-summary program.
+### Lecture 5 Automating regressions
 
-### Session 5 — 12 October · Descriptive analysis and graphics
+- Taught on 12 October, after students have learned to run regressions manually.
+- Repeat a model at different price cutoffs and identify the text that changes.
+- Define local macros for the outcome, predictors, and cutoffs.
+- Use `foreach`, report sample sizes and coefficients, and verify an iteration manually.
+- Explain how outcome-based sample restrictions change the comparison.
+- Checkpoint 4 (10%): automate regressions using a central-hotel indicator in place
+  of continuous distance; interpret and validate results.
+- Materials: `session-05-descriptives-graphics`; the folder name is retained for links.
 
-- Choosing descriptive statistics for variables and questions.
-- Grouped tables, correlations, aggregation, and export.
-- Histograms, bar charts, scatterplots, fitted lines, labels, and graph export.
-- Distinguishing informative graphics from decorative output.
-- Checkpoint 4 (10%): compare star categories with robust summaries and two purposeful
-  graphs.
+### Remaining meetings
 
-### Session 6 — 19 October · Final in-class exam
+On **5 October**, Lectures 3 and 4 and their checkpoints share the 100-minute meeting.
+On **12 October**, Lecture 5 and its checkpoint use the 100-minute meeting.
+The detailed agendas are in `schedule/session_plan.md`.
 
-- Individual final exam, worth 60% of the total course score.
-- Scope: material taught in Sessions 1–5.
-- No new lecture and no checkpoint.
-- Detailed exam instructions: **TBD**, to be announced before the exam.
+The exam remains on **Monday, 19 October 2026, 08:50–10:30**, worth 60%.
+It covers the core material actually taught in the five teaching meetings, including
+regression and regression automation. There is no new lecture or checkpoint in the
+exam meeting. Detailed instructions will be provided separately.
 
-The existing `session-06-analysis-simulation` scripts remain available as supplementary,
-ungraded material. They are not the exam paper or a sixth teaching session.
+### Optional reference material
+
+Reshaping, custom programs, the former graphics lecture and exercise, adjusted predictions,
+residual diagnostics, and resampling remain available as optional, ungraded reference.
+They are outside the required exam material. Optional files are named explicitly in
+the lecture guides. The `session-06-analysis-simulation` files are supplementary
+examples, not the exam paper or an additional teaching session.
 
 ## Course materials and reproducibility
 

@@ -4,43 +4,32 @@ set more off
 set varabbrev off
 
 * Assessment: individual checkpoint 3 of 4; 10% of the overall course grade.
-* Run from the project root using the prepared analysis dataset.
+* Lecture 4: regressions only. No local macros or loops are needed.
 capture mkdir "output"
 capture mkdir "output/logs"
-capture log close session04_exercise
-log using "output/logs/session04_exercise.log", name(session04_exercise) text replace
-
+capture log close exercise04
+log using "output/logs/session04_exercise.log", name(exercise04) text replace
 use "data/derived/hotel_panel.dta", clear
-keep if accommodation_type == "Hotel"
 
-* Variation: automate choices of sample cutoff, not just variables or cities,
-* and measure spread rather than repeating the lecture's mean/median summary.
+* Variation: interpret guest rating instead of distance as the main predictor.
 
-* TODO 1: Use help summarize, summarize with detail, and return list to find
-* the standard deviation and quartiles of price_per_night. The interquartile
-* range (IQR) is the 75th percentile minus the 25th percentile.
+* TODO 1: Define a single complete sample of Hotel quotes with positive nightly
+* price no higher than EUR 1,000 and observed price_per_night, ln_price, rating,
+* distance, stars, city_id, weekend, and hotel_id. Use it in every model below.
 
-* TODO 2: Adapt the lecture program into an r-class program named hotel_spread.
-* Accept one numeric variable and an optional if condition; use marksample
-* so both the condition and missing values are respected. Return N, sd, and
-* iqr. Make the definition rerunnable without "program already defined" errors.
+* TODO 2: Regress price_per_night on rating, then add distance and stars.
+* Use vce(cluster hotel_id) in both regressions. Record and compare N.
+* Interpret the rating coefficient in EUR per night per one-point rating change
+* on the 0-5 scale, before and after holding the other predictors fixed.
 
-* TODO 3: Put upper price cutoffs 100, 200, and 500 in a local macro. Loop over
-* them, calling hotel_spread for price_per_night at or below each cutoff.
-* Display the cutoff, N, SD, and IQR each time. Read or store returned results
-* before another command replaces them; do not permanently drop observations.
+* TODO 3: Add city and weekend indicators, then repeat that specification with
+* ln_price as the outcome. Use the same sample and clustered standard errors.
+* Explain how the unit of the rating coefficient changes with the log outcome.
+* Consult help regress and help fvvarlist if needed.
 
-* TODO 4: For one cutoff, check the program's results against a direct
-* summarize, detail call on the same sample. Record the comparison in a comment.
+* TODO 4: Explain why N counts quotes rather than hotels, why standard errors
+* are clustered, and why adding controls does not establish a causal effect.
+* Write commands explicitly; regression automation belongs to the next lecture.
 
-* TODO 5: Test hotel_spread on rating, which contains missing values, and on
-* price_per_night with a condition that selects no observations (price below 0).
-* Inspect return list. Verify that missing ratings are excluded, and that an
-* empty sample returns N = 0 with missing SD/IQR rather than misleading zeros.
-
-* TODO 6: In two sentences, explain how changing the price cutoff changes
-* the sample and its measured spread. Note that N counts price quotes,
-* not distinct hotels.
-
-display as text "Complete the TODO items and submit your do-file."
-log close session04_exercise
+display as text "Submit your completed do-file and session04_exercise.log."
+log close exercise04

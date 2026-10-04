@@ -1,17 +1,19 @@
 # Session 6: Final exam
 
-Date: 19 October 2026
+Date: 19 October 2026, 08:50–10:30 (unchanged)
 
 Assessment: final exam, worth 60% of the overall course grade. There is no individual
-checkpoint in Session 6. The exam covers material taught in Sessions 1-5.
+checkpoint in Session 6. The exam covers material taught in the five teaching meetings.
 
 The existing `lecture.do` and `exercise.do` in this folder are retained as optional,
 ungraded supplementary material on hotel-price analysis and resampling. They are not
-the Session 6 teaching plan or exam tasks, and their additional topics are not exam content.
+the Session 6 teaching plan or exam tasks. Basic regression and factor variables are now
+core material in Lecture 4; Lecture 5 automates these models. The additional topics here
+(margins, residual diagnostics, and resampling) remain optional.
 
 ## Supplementary learning goals
 
-- Fit and interpret a multiple linear regression with robust standard errors.
+- Extend the core regression examples to adjusted predictions and residual diagnostics.
 - Use factor variables and distinguish categorical from continuous predictors.
 - Calculate adjusted predictions with `margins`.
 - Inspect residuals and recognize limits of observational models.

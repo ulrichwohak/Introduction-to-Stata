@@ -14,6 +14,7 @@ log using "output/logs/00_master.log", name(master) text replace
 display as text "ECBS5241 Introduction to Stata"
 display as text "Running the complete reproducible course workflow"
 
+* Includes optional examples for verification; this is not the classroom agenda.
 local pipeline ///
     "scripts/01_prepare_data.do" ///
     "scripts/02_build_analysis_data.do" ///
@@ -21,14 +22,19 @@ local pipeline ///
     "lectures/session-02-cleaning-transforming/lecture.do" ///
     "lectures/session-03-combining-reshaping/lecture.do" ///
     "lectures/session-04-programming/lecture.do" ///
+    "lectures/session-03-combining-reshaping/optional-reshaping.do" ///
     "lectures/session-05-descriptives-graphics/lecture.do" ///
+    "lectures/session-05-descriptives-graphics/optional-programs.do" ///
+    "lectures/session-05-descriptives-graphics/optional-graphics.do" ///
     "lectures/session-06-analysis-simulation/lecture.do"
 
 foreach script of local pipeline {
     display as result _newline "Running `script'"
     capture noisily do "`script'"
-    if _rc != 0 {
-        local failed_rc = _rc
+    local script_rc = _rc
+    display as text "Return code: `script_rc'"
+    if `script_rc' != 0 {
+        local failed_rc = `script_rc'
         display as error "Pipeline stopped in `script' with return code `failed_rc'."
         log close master
         exit `failed_rc'
