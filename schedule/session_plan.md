@@ -12,13 +12,13 @@ Lectures 1 and 2 and their exercises remain unchanged. The revised sequence is:
 3. Lecture 5: local macros and foreach loops to automate regressions.
 
 Lecture numbers identify separate sets of materials, not separate remaining dates.
-Existing folder paths are retained so that links continue to work.
+Lecture 4 uses `session-04-regressions`; the other folder paths are unchanged.
 
 ## Remaining meetings
 
 | Date | Material | Assessment |
 | --- | --- | --- |
-| 5 October | Lecture 3 (`session-03-combining-reshaping`), then Lecture 4 (`session-04-programming`) | Checkpoint 2 on combining; checkpoint 3 on regression |
+| 5 October | Lecture 3 (`session-03-combining-reshaping`), then Lecture 4 (`session-04-regressions`) | Checkpoint 2 on combining; checkpoint 3 on regression |
 | 12 October | Lecture 5 (`session-05-descriptives-graphics`) | Checkpoint 4 on regression automation |
 | 19 October, 08:50–10:30 | Final in-class exam | 60% of the course grade |
 

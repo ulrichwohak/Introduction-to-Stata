@@ -30,9 +30,5 @@ use "data/derived/hotel_panel.dta", clear
 * Explain how the unit of the rating coefficient changes with the log outcome.
 * Consult help regress and help fvvarlist if needed.
 
-* TODO 4: Explain why N counts quotes rather than hotels, why standard errors
-* are clustered, and why adding controls does not establish a causal effect.
-* Write commands explicitly; regression automation belongs to the next lecture.
-
 display as text "Submit your completed do-file and session04_exercise.log."
 log close exercise04

@@ -4,7 +4,7 @@ set more off
 set varabbrev off
 
 * Lecture 4: running and interpreting regressions, 5 October 2026.
-* The folder name is retained for existing links. Macros and loops come in Lecture 5.
+* Macros and loops come in Lecture 5.
 * Run from the repository root using the prepared hotel analysis data.
 capture mkdir "output"
 capture mkdir "output/logs"

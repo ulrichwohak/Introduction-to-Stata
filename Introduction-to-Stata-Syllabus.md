@@ -156,8 +156,8 @@ submitted line and conclusion.
 
 Lectures 1 and 2 and their exercises remain unchanged. The revised sequence keeps
 three separate lecture files: **combining data**, **running and interpreting
-regressions**, and **automating regressions**. Lecture-folder names are retained
-for stable links; their numbers identify material rather than separate remaining dates.
+regressions**, and **automating regressions**. Lecture-folder numbers identify
+material rather than separate remaining dates.
 
 ### Workflow and cleaning foundations
 
@@ -186,7 +186,7 @@ for stable links; their numbers identify material rather than separate remaining
 - Distinguish price quotes from hotels; cluster standard errors by hotel.
 - Checkpoint 3 (10%): use rating as the main predictor, compare specifications,
   and interpret results. No macros or loops are required.
-- Materials: `session-04-programming`; the folder name is retained for existing links.
+- Materials: `session-04-regressions`.
 
 ### Lecture 5 Automating regressions
 

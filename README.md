@@ -12,9 +12,9 @@ run regressions manually → automate repeated regressions**. Reshaping is optio
 ## Repository structure
 
 - `lectures/`: topic modules with an annotated lecture do-file, a student exercise, and
-  a short guide. Existing folder numbers are retained for stable links. On **5 October**,
+  a short guide. Folder numbers identify topic modules. On **5 October**,
   use Lecture 3 in `session-03-combining-reshaping` for combining, then the separate
-  Lecture 4 in `session-04-programming` for regressions. On **12 October**, use
+  Lecture 4 in `session-04-regressions` for regressions. On **12 October**, use
   Lecture 5 in `session-05-descriptives-graphics` for local macros and loops.
   The former graphics materials remain optional, ungraded reference.
   The Session 6 files extend regression to margins and resampling; those extensions are optional.

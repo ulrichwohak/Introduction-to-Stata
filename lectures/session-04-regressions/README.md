@@ -4,7 +4,7 @@ Teaching date: 5 October 2026, after Lecture 3 on combining data.
 
 Assessment: checkpoint 3 of 4, worth 10% of the overall course grade.
 
-The existing folder name is retained for links. This lecture contains manual
+This lecture contains manual
 regressions only; local macros and loops are introduced separately in Lecture 5.
 
 ## Learning goals
@@ -42,8 +42,8 @@ the geometric-mean scale, not an automatic prediction of arithmetic mean price.
 
 The exercise changes the main predictor from distance to guest rating. Students
 compare simple and multiple regressions, add categorical controls, and change the
-outcome to log price. They interpret the rating coefficient, check sample sizes,
-and explain clustering. Commands are written explicitly, without macros or loops.
+outcome to log price. They interpret the rating coefficient and check sample sizes.
+Commands are written explicitly, without macros or loops.
 
 Submit the completed do-file and `output/logs/session04_exercise.log`.
 Use `help regress` and `help fvvarlist` to adapt the demonstrated syntax.

@@ -21,7 +21,7 @@ local pipeline ///
     "lectures/session-01-stata-workflow/lecture.do" ///
     "lectures/session-02-cleaning-transforming/lecture.do" ///
     "lectures/session-03-combining-reshaping/lecture.do" ///
-    "lectures/session-04-programming/lecture.do" ///
+    "lectures/session-04-regressions/lecture.do" ///
     "lectures/session-03-combining-reshaping/optional-reshaping.do" ///
     "lectures/session-05-descriptives-graphics/lecture.do" ///
     "lectures/session-05-descriptives-graphics/optional-programs.do" ///
