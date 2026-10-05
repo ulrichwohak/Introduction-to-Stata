@@ -12,19 +12,23 @@ capture log close session04
 log using "output/logs/session04.log", name(session04) text replace
 use "data/derived/hotel_panel.dta", clear
 
-* 1. Understand the data and define one sample for all specifications.
+* 1. Understand the data and select the quotes eligible for analysis.
 * A row is a price quote, not a distinct hotel. The nightly price and its
 * natural logarithm were created in the preparation pipeline.
 describe hotel_id price_per_night ln_price distance rating stars city_id weekend
-generate byte regression_sample = accommodation_type == "Hotel" & ///
-    price_per_night > 0 & price_per_night <= 1000 & ///
-    !missing(price_per_night, ln_price, distance, rating, stars, city_id, weekend, hotel_id)
+* Select hotels, then apply each price restriction separately.
+generate regression_sample = accommodation_type == "Hotel"
+replace regression_sample = 0 if price_per_night <= 0
+replace regression_sample = 0 if price_per_night > 1000
+* Missing numeric values are larger than any number in Stata, so the last
+* restriction also excludes missing prices.
 count if regression_sample
 summarize price_per_night distance rating stars if regression_sample
 
 * The price limit defines our teaching sample; higher prices are not automatically
-* errors. Complete cases keep all models on the same observations, so adding
-* predictors does not also change the sample through missing values.
+* errors. Each regression excludes quotes with missing values in the variables
+* it needs. Check Number of obs: adding predictors can change the sample.
+* count above counts eligible quotes, not necessarily those used by every model.
 
 * 2. Simple regression: the outcome comes first, then the predictor.
 * The distance coefficient is the fitted EUR-per-night difference associated
@@ -45,8 +49,9 @@ regress price_per_night distance rating stars if regression_sample, ///
     vce(cluster hotel_id)
 display as text "Price quotes used: " e(N)
 
-* Compare distance coefficients and N. Adding controls changes the comparison,
-* but does not establish causation. A confidence interval expresses uncertainty
+* Compare distance coefficients and N. If N changes, the coefficient comparison
+* reflects both added predictors and different observations. Adding controls
+* does not establish causation. A confidence interval expresses uncertainty
 * under the model; a p-value is not the probability that the model is true.
 
 * 4. Categorical controls: i. creates category indicators and omits a reference.
@@ -57,7 +62,7 @@ tabulate weekend if regression_sample
 regress price_per_night c.distance c.rating c.stars i.city_id i.weekend ///
     if regression_sample, vce(cluster hotel_id)
 
-* 5. Change the outcome to log nightly price, keeping the same sample.
+* 5. Change the outcome to log nightly price, keeping the eligibility rules.
 * A coefficient is now a log-price difference, not a euro difference. For small
 * coefficients, 100*b approximates the percentage difference. The exact expression
 * below refers to the model's geometric-mean scale, not arithmetic mean price.

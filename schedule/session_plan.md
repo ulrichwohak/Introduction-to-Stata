@@ -31,7 +31,7 @@ The original exam date and scheduled meeting slot are unchanged.
 | 0–10 | Identify keys and the observation unit; append the annual price files. |
 | 10–25 | Merge attributes, inspect matches, calculate nightly prices, and save. |
 | 25–40 | Checkpoint 2: reverse the merge direction using 2018 prices. |
-| 40–55 | Lecture 4: simple and multiple regressions on one common sample. |
+| 40–55 | Lecture 4: simple and multiple regressions; check sample sizes. |
 | 55–75 | Categorical controls, log price, coefficient interpretation, and uncertainty. |
 | 75–95 | Checkpoint 3: rating-price regressions and interpretation. |
 | 95–100 | Recap and preview automation. |

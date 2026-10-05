@@ -180,7 +180,7 @@ for stable links; their numbers identify material rather than separate remaining
 ### Lecture 4 Running and interpreting regressions
 
 - Taught on 5 October, after Lecture 3.
-- Run simple and multiple regressions manually on the same complete sample.
+- Run simple and multiple regressions manually and compare sample sizes.
 - Interpret coefficients in their units and distinguish association from causation.
 - Add categorical controls and change the outcome to log nightly price.
 - Distinguish price quotes from hotels; cluster standard errors by hotel.

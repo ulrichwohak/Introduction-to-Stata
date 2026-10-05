@@ -13,17 +13,20 @@ use "data/derived/hotel_panel.dta", clear
 
 * Variation: interpret guest rating instead of distance as the main predictor.
 
-* TODO 1: Define a single complete sample of Hotel quotes with positive nightly
-* price no higher than EUR 1,000 and observed price_per_night, ln_price, rating,
-* distance, stars, city_id, weekend, and hotel_id. Use it in every model below.
+* TODO 1: Select Hotel quotes with positive nightly price no higher than EUR 1,000.
+* Create regression_sample and apply the price restrictions in separate steps,
+* as in the lecture. Use this indicator in every model below. Each regression
+* excludes observations with missing values in the variables it needs.
 
 * TODO 2: Regress price_per_night on rating, then add distance and stars.
 * Use vce(cluster hotel_id) in both regressions. Record and compare N.
+* If N changes, explain why adding predictors can also change the sample.
 * Interpret the rating coefficient in EUR per night per one-point rating change
 * on the 0-5 scale, before and after holding the other predictors fixed.
 
 * TODO 3: Add city and weekend indicators, then repeat that specification with
-* ln_price as the outcome. Use the same sample and clustered standard errors.
+* ln_price as the outcome. Keep the eligibility rules and clustered standard errors.
+* Check Number of obs for each model.
 * Explain how the unit of the rating coefficient changes with the log outcome.
 * Consult help regress and help fvvarlist if needed.
 

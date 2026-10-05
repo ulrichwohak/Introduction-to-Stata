@@ -10,7 +10,7 @@ regressions only; local macros and loops are introduced separately in Lecture 5.
 ## Learning goals
 
 - Run a simple regression and interpret its coefficient in the correct units.
-- Add predictors manually and compare specifications on the same complete sample.
+- Add predictors manually and check whether the number of observations changes.
 - Use `i.city_id` and `i.weekend` for categories rather than numeric scales.
 - Interpret a log-price outcome and distinguish log differences from euro differences.
 - Distinguish price quotes from hotels and understand why standard errors are clustered.
@@ -23,9 +23,12 @@ supplied by the instructor or created by the preparation and analysis scripts.
 It does not depend on a completed exercise.
 
 Start with nightly price on distance, then add rating and stars. Add city/weekend
-indicators before changing the outcome to log nightly price. All models use the
-same complete sample of Hotel quotes with positive nightly price no higher than
-EUR 1,000. The price limit is a teaching sample choice, not a claim that other
+indicators before changing the outcome to log nightly price. Select Hotel quotes
+with positive nightly price no higher than EUR 1,000, applying the restrictions
+in separate steps. Each regression excludes observations with missing values in
+the variables it needs. Check N when adding predictors: coefficient changes can
+reflect both added predictors and a changed sample.
+The price limit is a teaching sample choice, not a claim that other
 prices are invalid. Stars are treated as continuous because half-star values occur.
 
 A coefficient describes an association, not a causal effect. `vce(cluster hotel_id)`
@@ -39,8 +42,8 @@ the geometric-mean scale, not an automatic prediction of arithmetic mean price.
 
 The exercise changes the main predictor from distance to guest rating. Students
 compare simple and multiple regressions, add categorical controls, and change the
-outcome to log price. They interpret the rating coefficient and explain the common
-sample and clustering. Commands are written explicitly, without macros or loops.
+outcome to log price. They interpret the rating coefficient, check sample sizes,
+and explain clustering. Commands are written explicitly, without macros or loops.
 
 Submit the completed do-file and `output/logs/session04_exercise.log`.
 Use `help regress` and `help fvvarlist` to adapt the demonstrated syntax.
