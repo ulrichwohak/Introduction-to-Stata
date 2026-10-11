@@ -1,53 +1,56 @@
 version 18.0
+* Use Stata 18's command behaviour.
+
+* Checkpoint 4: programming and graphics. Individual work; 10% of the course score.
+* Lecture 5, 12 October 2026. Allow 25 minutes. Work from the repository root.
+* Adapt the lecture's price histograms to guest ratings in Budapest and Zagreb.
+
+* Remove the previous data from memory, show all output, and use full names.
 clear all
 set more off
 set varabbrev off
-
-* Assessment: individual checkpoint 4 of 4; 10% of the overall course grade.
-* Lecture 5, 12 October 2026. Allow 25 minutes.
-* Run from the project root using the prepared analysis dataset.
+* Create the output folders if needed; existing folders are left in place.
 capture mkdir "output"
 capture mkdir "output/logs"
+capture mkdir "output/figures"
+* Record commands and results in a separate exercise log.
 capture log close session05_exercise
 log using "output/logs/session05_exercise.log", name(session05_exercise) text replace
-
+* Use the prepared data, not a completed earlier exercise.
 use "data/derived/hotel_panel.dta", clear
-keep if accommodation_type == "Hotel"
 
-* Variation: use the central_hotel indicator instead of continuous distance.
-* The model relates log nightly price to being within 2 miles of the center,
-* controlling for rating, stars, city, and weekend. It describes association.
-* Use vce(cluster hotel_id) in every regression: a hotel has repeated quotes.
+* TODO 1 (5 minutes): Keep Hotel quotes with 0 < price_per_night <= 500 and a
+* nonmissing rating. Count the remaining rows and check the rating's range with
+* summarize. Each row is a quote, so a hotel can appear more than once.
+* Help: help keep; help missing; help summarize.
 
-* TODO 1: Inspect ln_price, central_hotel, rating, stars, city_id, and weekend.
-* Consult help regress and help fvvarlist as needed. Define a common-sample
-* indicator excluding missing values in these variables and hotel_id.
-* Use this same indicator in every model below; add the price cutoff separately.
+* TODO 2 (12 minutes): Define a local for the plotted variable (rating) and a
+* local holding Budapest and Zagreb. Use foreach to do the following for each city:
+* - Print the city name and count its retained quotes.
+* - Draw a rating histogram in percent, with width(0.5), start(0), and
+*   xlabel(0(1)5). These options mean half-point bins and labels from 0 to 5.
+* - Use the variable local in the histogram command. Give the graph a city-specific
+*   title, labelled axes (guest rating 0-5 and percent of price quotes), and a note
+*   stating the Hotel sample, price limit, and that hotels may repeat.
+* - Export a separate PNG for each city using the city local in its filename:
+*   output/figures/session05_exercise_rating_Budapest.png and
+*   output/figures/session05_exercise_rating_Zagreb.png.
+* Run local definitions and the loop together. Help: help foreach; help histogram;
+* help graph export. No global, forvalues, while, or regression is required here.
 
-* TODO 2: Define local macros for the outcome, predictors, and upper price
-* cutoffs 100, 200, and 500. Use factor-variable notation for central_hotel,
-* city_id, and weekend. Display the outcome and predictors to check the text.
+* TODO 3 (5 minutes): Write the Budapest count and histogram commands once
+* without macros or a loop. Use exactly the same sample and bin settings.
+* Compare the quote count and histogram with your loop's Budapest result.
+* Record whether they agree in a comment. Do not overwrite the loop's exports.
 
-* TODO 3: Write a foreach loop over the cutoffs. Run the regression on the
-* common sample with price_per_night at or below the current cutoff.
-* Display the cutoff and e(N) immediately after each regression. Also report
-* the coefficient comparing central with noncentral hotels; use the coefficient
-* name shown in the regression output. Do not permanently filter the dataset.
+* TODO 4 (3 minutes): In two or three comment sentences, describe one visible
+* difference or similarity between the cities. Explain what a histogram bar's
+* percentage refers to, and why the row counts are not counts of distinct hotels.
+* Do not describe an association or a city difference as a causal effect.
 
-* TODO 4: Manually write and run the full regression for one cutoff, without
-* using macros for the outcome, predictors, or cutoff. Compare its observation
-* count and central-hotel coefficient with that loop iteration. Record the
-* comparison in a comment. Explain why this check is more useful than merely
-* observing that the loop runs without an error.
-
-* TODO 5: In two or three sentences, explain what happens to the sample and
-* the estimated central-hotel association as the cutoff changes. N counts
-* price quotes, not unique hotels. These are different samples selected on
-* price; do not interpret a coefficient change as a causal effect of the cutoff.
-
-* TODO 6: Interpret the central-hotel coefficient from your manually checked
-* model in log-price or approximate percentage terms, holding controls fixed.
-* Briefly explain why standard errors are clustered by hotel.
-
-display as text "Complete the TODO items and submit your do-file and log."
+* Submit this completed do-file, its log, and the two city PNGs.
+* Credit is based on a complete, clearly documented, reproducible attempt;
+* a reasonable attempt does not have to produce perfect results for full credit.
+display "Complete the TODO items; submit your do-file, log, and two city graphs."
+* Close the exercise log, keeping lecture and exercise results separate.
 log close session05_exercise

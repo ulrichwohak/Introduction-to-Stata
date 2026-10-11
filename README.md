@@ -7,7 +7,7 @@ The repository supports five hands-on teaching sessions and a final in-class exa
 sixth meeting. Students work with real hotel-price data prepared for *Data Analysis for
 Business, Economics, and Policy* while learning to import, clean, combine, and analyze
 data reproducibly with do-files. The revised sequence is **combine data →
-run regressions manually → automate repeated regressions**. Reshaping is optional.
+run regressions manually → learn programming and produce graphics**. Reshaping is optional.
 
 ## Repository structure
 
@@ -15,13 +15,14 @@ run regressions manually → automate repeated regressions**. Reshaping is optio
   a short guide. Folder numbers identify topic modules. On **5 October**,
   use Lecture 3 in `session-03-combining-reshaping` for combining, then the separate
   Lecture 4 in `session-04-regressions` for regressions. On **12 October**, use
-  Lecture 5 in `session-05-descriptives-graphics` for local macros and loops.
-  The former graphics materials remain optional, ungraded reference.
+  Lecture 5 in `session-05-descriptives-graphics` for macros, loops, and basic graphics.
+  Additional tables, regression automation, and custom programs remain optional reference.
   The Session 6 files extend regression to margins and resampling; those extensions are optional.
 - `data/raw/`: attributed hotel CSV files committed for reliable offline teaching.
 - `data/derived/`: generated Stata datasets; not committed.
 - `scripts/`: the reproducible build pipeline and master do-file.
-- `schedule/session_plan.md`: dates, topics, materials, and assessment checkpoints.
+- [Session plan](schedule/session_plan.md): dates, topics, assessment checkpoints,
+  and the full 100-minute programming and graphics agenda for 12 October.
 - `output/`: generated logs, figures, and tables; not committed.
 
 ## Requirements
@@ -68,13 +69,23 @@ input files. Exercise outputs have their own names and never replace lecture out
 The course is Pass/Fail. Session 1 has ungraded practice. Four individual in-class
 checkpoints during the teaching meetings each contribute 10% of the course score (40% in
 total). Checkpoint 2 covers combining, checkpoint 3 regression, and checkpoint 4
-regression automation. Submission details and any make-up arrangements are announced in class. The final in-class exam in Session 6 on 19 October (08:50–10:30) contributes 60% and covers
-material taught in the five teaching meetings, including introductory regression and
-regression automation. Reshaping, custom programs, the optional graphics extensions, margins, and resampling are optional
-and outside the exam scope. A total score of 60 or more is required to pass.
+programming and graphics. Submission details and any make-up arrangements are announced
+in class. The final in-class exam in Session 6 on 19 October (08:50–10:30) contributes
+60% and covers material taught in the five teaching meetings, including introductory
+regression, local macros, the local/global distinction, foreach and simple forvalues
+loops, and basic graphics. The graphics scope includes histograms, box plots,
+scatterplots with a fitted line, labels, sample restrictions, interpretation, and export.
+Writing while loops, reshaping, custom programs, extended regression-cutoff analysis,
+additional table exports, margins, and resampling are outside the exam scope.
+A total score of 60 or more is required to pass.
 
-See the syllabus for the assessment outline. Detailed exam instructions will be provided
-by the instructor separately.
+For checkpoint 4, students use locals and a foreach loop to make guest-rating
+histograms for Budapest and Zagreb, verify one manually, and submit a do-file,
+log, and two PNGs. The [Lecture 5 guide](lectures/session-05-descriptives-graphics/README.md)
+gives the 25-minute task and submission filenames.
+
+See the [syllabus](Introduction-to-Stata-Syllabus.md) for the assessment outline and
+exam scope. Detailed exam instructions will be provided by the instructor separately.
 
 ## Data
 

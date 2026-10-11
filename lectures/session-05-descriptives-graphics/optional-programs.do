@@ -4,7 +4,7 @@ set more off
 set varabbrev off
 
 * Optional extension, outside the 100-minute core class and checkpoint.
-* Locals and foreach are sufficient for the required repeated regressions.
+* Lecture 5's core task uses locals and foreach to create and export graphics.
 capture mkdir "output"
 capture mkdir "output/logs"
 capture log close session05_optional

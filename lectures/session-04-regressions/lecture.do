@@ -77,6 +77,6 @@ display as text "Exact percentage difference on the geometric-mean scale: " ///
 ereturn list
 display as text "Price quotes used: " e(N)
 
-* No macros or loops today. Lecture 5 starts by repeating a regression manually
-* and then introduces automation to avoid rewriting the same command.
+* No macros or loops today. Lecture 5 introduces programming with familiar
+* summaries, then uses macros and loops to create and export basic graphics.
 log close session04

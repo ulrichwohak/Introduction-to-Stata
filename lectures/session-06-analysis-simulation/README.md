@@ -8,7 +8,8 @@ checkpoint in Session 6. The exam covers material taught in the five teaching me
 The existing `lecture.do` and `exercise.do` in this folder are retained as optional,
 ungraded supplementary material on hotel-price analysis and resampling. They are not
 the Session 6 teaching plan or exam tasks. Basic regression and factor variables are now
-core material in Lecture 4; Lecture 5 automates these models. The additional topics here
+core material in Lecture 4; Lecture 5 teaches programming and basic graphics, which
+are also in exam scope. The additional topics here
 (margins, residual diagnostics, and resampling) remain optional.
 
 ## Supplementary learning goals

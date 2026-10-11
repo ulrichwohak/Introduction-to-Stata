@@ -12,8 +12,8 @@
 
 **Content.** This course introduces Stata as a reproducible research environment. Students
 learn to organize a project, write and run do-files, import and validate data, clean and
-transform variables, combine datasets, run and interpret regressions, automate repeated
-regressions, and interpret descriptive and regression output. Reshaping is an optional extension. The five teaching
+transform variables, combine datasets, run and interpret regressions, use macros and
+loops, and create and interpret basic graphics and descriptive output. Reshaping is an optional extension. The five teaching
 sessions contribute to one complete workflow that can be rerun from raw data. The sixth
 meeting is the final in-class exam.
 
@@ -69,15 +69,17 @@ By the end of the course, students will be able to:
   observation.
 - Run simple and multiple regressions, use categorical controls and log outcomes, and
   interpret coefficients and sample sizes as descriptive associations.
-- Automate repeated regressions with local macros and loops, and verify an iteration
-  against a manually specified regression.
-- Read descriptive summaries and regression output and record results reproducibly.
+- Distinguish local and global macros, use locals with foreach and simple forvalues
+  loops, and verify one iteration against manually written commands.
+- Create and interpret histograms, box plots, and scatterplots with a fitted line;
+  label samples and units, export figures, and read descriptive and regression output.
 - Read unfamiliar Stata output and documentation and explain every submitted command and
   analytic decision.
 
-Optional materials cover reshaping, custom programs, additional graphics, adjusted predictions, and resampling.
-These extensions are outside the exam scope. Basic regression is part of the core teaching
-sequence, before programming.
+Basic regression, programming foundations, and basic graphics are part of the core
+teaching and exam scope. Writing while loops, reshaping, custom programs, extended
+regression-cutoff analysis, additional table exports, adjusted predictions, and resampling
+are outside the exam scope. While is demonstrated for recognition only.
 
 ## Learning activities and teaching methods
 
@@ -94,8 +96,8 @@ The teaching sessions have two connected components:
 
 Session 1's exercise is ungraded practice. Four individual, reproducible exercise attempts
 form the graded checkpoints during the teaching meetings. Checkpoint identifiers and
-weights are retained. The revised checkpoints cover cleaning, combining, regression,
-and regression automation. Submission details and any make-up arrangements are announced in class.
+weights are retained. The four checkpoints cover cleaning; combining; regression;
+and programming with graphics. Submission details and any make-up arrangements are announced in class.
 There is no checkpoint in the exam meeting.
 
 The course uses hotel data prepared for Békés and Kézdi's Data Analysis for Business,
@@ -133,8 +135,10 @@ attempt is. Submission instructions and any make-up procedure are announced in c
 
 The individual final exam takes place during Session 6 on Monday, 19 October 2026,
 08:50–10:30. This is the original scheduled exam slot and is unchanged. It assesses
-the Stata concepts and reproducible workflow taught in the five teaching meetings. There is no new
-lecture or separate checkpoint in this meeting.
+the Stata concepts and reproducible workflow taught in the five teaching meetings,
+including basic graphics: histograms, box plots, scatterplots with a fitted line,
+labels, sample restrictions, interpretation, and PNG export. There is no new lecture
+or separate checkpoint in this meeting.
 
 The exam format, duration within the scheduled meeting, task-level marking scheme,
 dataset, permitted resources, and submission instructions are **TBD** and will be
@@ -156,7 +160,7 @@ submitted line and conclusion.
 
 Lectures 1 and 2 and their exercises remain unchanged. The revised sequence keeps
 three separate lecture files: **combining data**, **running and interpreting
-regressions**, and **automating regressions**. Lecture-folder numbers identify
+regressions**, and **programming and graphics**. Lecture-folder numbers identify
 material rather than separate remaining dates.
 
 ### Workflow and cleaning foundations
@@ -188,15 +192,17 @@ material rather than separate remaining dates.
   and interpret results. No macros or loops are required.
 - Materials: `session-04-regressions`.
 
-### Lecture 5 Automating regressions
+### Lecture 5 Programming basics and reproducible graphics
 
 - Taught on 12 October, after students have learned to run regressions manually.
-- Repeat a model at different price cutoffs and identify the text that changes.
-- Define local macros for the outcome, predictors, and cutoffs.
-- Use `foreach`, report sample sizes and coefficients, and verify an iteration manually.
-- Explain how outcome-based sample restrictions change the comparison.
-- Checkpoint 4 (10%): automate regressions using a central-hotel indicator in place
-  of continuous distance; interpret and validate results.
+- Explain macros, text substitution, expressions, local scope, and global scope.
+- Practise `foreach` and simple `forvalues` loops; briefly demonstrate `while`.
+- Build histograms, box plots, and scatterplots with a fitted line; explain samples,
+  units, bin widths, distributions, and associations.
+- Use a city loop to label and export figures, then check one result manually.
+- Checkpoint 4 (10%): use locals and `foreach` to make guest-rating histograms for
+  Budapest and Zagreb, verify Budapest manually, and interpret the graphs.
+  Submit a do-file, log, and two city-specific PNGs. Allow 25 minutes.
 - Materials: `session-05-descriptives-graphics`; the folder name is retained for links.
 
 ### Remaining meetings
@@ -207,16 +213,19 @@ The detailed agendas are in `schedule/session_plan.md`.
 
 The exam remains on **Monday, 19 October 2026, 08:50–10:30**, worth 60%.
 It covers the core material actually taught in the five teaching meetings, including
-regression and regression automation. There is no new lecture or checkpoint in the
+regression, local macros, the local/global distinction, foreach and simple forvalues
+loops, and basic graphics. There is no new lecture or checkpoint in the
 exam meeting. Detailed instructions will be provided separately.
 
 ### Optional reference material
 
-Reshaping, custom programs, the former graphics lecture and exercise, adjusted predictions,
-residual diagnostics, and resampling remain available as optional, ungraded reference.
-They are outside the required exam material. Optional files are named explicitly in
-the lecture guides. The `session-06-analysis-simulation` files are supplementary
-examples, not the exam paper or an additional teaching session.
+Reshaping, custom programs, extended regression-cutoff analysis, additional table
+exports, adjusted predictions, residual diagnostics, and resampling remain optional,
+ungraded reference. Optional files add no exam requirements; basic graph types taught
+in Lecture 5 remain required even if optional files also use them. Writing while loops
+is not required. Optional files are named in the lecture guides. The
+`session-06-analysis-simulation` files are supplementary examples, not the exam paper
+or an additional teaching session.
 
 ## Course materials and reproducibility
 
