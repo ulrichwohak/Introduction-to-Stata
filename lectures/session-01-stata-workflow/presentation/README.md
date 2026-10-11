@@ -21,10 +21,12 @@ the October revision. For the current teaching order and exam scope, use the
 [session plan](../../../schedule/session_plan.md) and
 [syllabus](../../../Introduction-to-Stata-Syllabus.md): Lecture 3 on combining and the
 separate Lecture 4 on regressions are both taught on 5 October. Lecture 5 on
-programming foundations and basic graphics follows on 12 October. Checkpoint 4 uses
-locals and a loop to create guest-rating histograms for Budapest and Zagreb.
+programming foundations and basic graphics follows on 12 October, the last teaching
+meeting. Start with data-free macro and loop practice, then a separate graphics file.
+Checkpoint 4 practises macros and loops and asks for one basic line plot.
 
-Basic regression and basic graphics are core exam material. Reshaping, custom
+Basic regression, line plots, and scatterplots with a fitted line are core exam
+material. Histograms, box plots, while loops, nested loops, reshaping, custom
 programs, and extended regression-cutoff analysis remain optional. The original
 exam slot remains 19 October, 08:50–10:30. The September slide deck is retained as
 a record of the opening class; its roadmap is not the current October schedule.

@@ -77,6 +77,6 @@ display as text "Exact percentage difference on the geometric-mean scale: " ///
 ereturn list
 display as text "Price quotes used: " e(N)
 
-* No macros or loops today. Lecture 5 introduces programming with familiar
-* summaries, then uses macros and loops to create and export basic graphics.
+* No macros or loops today. Lecture 5 starts with data-free programming examples,
+* then introduces basic line plots and scatterplots in a separate do-file.
 log close session04

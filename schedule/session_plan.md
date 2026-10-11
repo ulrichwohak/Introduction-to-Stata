@@ -9,7 +9,7 @@ Lectures 1 and 2 and their exercises remain unchanged. The revised sequence is:
 
 1. Lecture 3: combining data, with reshaping optional.
 2. Lecture 4: running and interpreting regressions, without macros or loops.
-3. Lecture 5: programming foundations, then basic graphics and a city export loop.
+3. Lecture 5: data-free programming practice, then basic line plots and scatterplots.
 
 Lecture numbers identify separate sets of materials, not separate remaining dates.
 Lecture 4 uses `session-04-regressions`; the other folder paths are unchanged.
@@ -44,24 +44,32 @@ student's completed combining exercise.
 
 Teaching slot: **08:50–10:30**. Use the
 [Lecture 5 guide](../lectures/session-05-descriptives-graphics/README.md),
-[lecture do-file](../lectures/session-05-descriptives-graphics/lecture.do), and
+[programming do-file](../lectures/session-05-descriptives-graphics/lecture.do),
+[graphics do-file](../lectures/session-05-descriptives-graphics/graphics.do), and
 [checkpoint starter](../lectures/session-05-descriptives-graphics/exercise.do).
 
 | Minutes | Activity |
 | --- | --- |
-| 0–5 | Repeat familiar summaries and identify the text that changes. |
-| 5–20 | Local macros, expansion, expressions, scope, and one global demonstration. |
-| 20–35 | Practise foreach; introduce forvalues; briefly demonstrate while and connect macros to a familiar regression. |
-| 35–65 | Build a histogram, box plot, and scatterplot; add a fitted line and explain each figure. |
-| 65–70 | Use a city loop to label and export comparable histograms. |
-| 70–95 | Individual programming and graphics checkpoint. |
-| 95–100 | Recap, questions, and submissions. |
+| 0–2 | Print text by hand; identify the part that changes. |
+| 2–10 | Define and read locals and globals; demonstrate quotes and selected-block scope. |
+| 10–30 | Trace foreach one pass at a time; change the list and loop body. |
+| 30–40 | Practise forvalues; predict output and explain each repeated command. |
+| 40–55 | Draw, label, and export a basic line plot; practise x/y order and sort. |
+| 55–70 | Draw a scatterplot; change an axis variable and add a fitted line. |
+| 70–95 | Individual checkpoint on macros, loops, and one line plot. |
+| 95–100 | Recap the exam scope, answer questions, and submit. |
 
-Students type and run simple commands together. Teach macro definitions and scope
-before loops, and build each graph manually before automating it. Keep `while` to
-a brief demonstration; custom programs and the extended regression-cutoff example
-are optional. Use the prepared `data/derived/hotel_panel.dta`, not an earlier
-student exercise output.
+This is the last teaching meeting. Spend the first 40 minutes on programming,
+using only short text and number examples. Students predict, run, change, and
+explain each loop. Teach macro definitions, quotes, braces, and selected-block
+scope explicitly. Do not introduce regression automation or new analytic methods.
+Only then open the separate graphics do-file, using the prepared hotel data.
+The line plot uses six monthly quotes for one hotel; no aggregation is needed.
+
+The eight-minute macro introduction covers definition and substitution (2 minutes),
+local scope across selections (2), a global example and cleanup (3), and a quick
+syntax check (1). Locals recur throughout the loop practice. The shorter opening
+leaves 30 minutes for the existing plots and practice, without adding topics.
 
 ## Exercises and assessment
 
@@ -80,28 +88,29 @@ invalidated by this revision. The course is Pass/Fail with a total-score pass th
 
 Exercises apply variations of the lecture and require interpretation and validation.
 No earlier exercise solution is an input. The revised checkpoints request do-files
-and separate logs; checkpoint 4 also requests two city-specific PNGs. Reshaping is not required.
+and separate logs; checkpoint 4 also requests one line-plot PNG. Reshaping is not required.
 
 ### Checkpoint 4 on programming and graphics
 
-Allow **25 minutes**, worth **10%** of the course score. Students adapt the lecture's
-price-histogram loop to guest ratings in **Budapest and Zagreb**. They use locals
-and `foreach`, retain Hotel quotes with positive nightly prices up to EUR 500 and
-nonmissing ratings, and produce labelled histograms with half-point bins. They
-verify the Budapest result manually and write a short interpretation.
+Allow **25 minutes**, worth **10%** of the course score. Students define and display
+a local and a global, explain scope, and remove their named global (4 minutes).
+They trace a two-city `foreach` and check one expanded command (8 minutes), then
+predict and run a simple `forvalues` loop (5 minutes). Finally, they draw and export
+one labelled line plot from a supplied six-row hotel selection and explain `sort`
+(8 minutes). No cleaning, city comparison, or regression is required.
 
-Submit the completed do-file, `output/logs/session05_exercise.log`, and the two PNGs
-`output/figures/session05_exercise_rating_Budapest.png` and
-`output/figures/session05_exercise_rating_Zagreb.png`. Assess a complete, clearly
+Submit the completed do-file, `output/logs/session05_exercise.log`, and
+`output/figures/session05_exercise_line.png`. Assess a complete, clearly
 documented, reproducible attempt; perfect results are not required for full credit.
 
 ## Final exam scope
 
 The exam on **19 October, 08:50–10:30**, remains worth **60%**. Basic graphics taught
-in Lecture 5 are in scope: histograms, box plots, scatterplots with a fitted line,
-labels, sample restrictions, interpretation, and PNG export. Core programming
-covers locals, the local/global distinction, `foreach`, and simple `forvalues`
-loops. Writing `while` loops is not required. Regression remains core Lecture 4
+in Lecture 5 are in scope: line plots with `sort`, scatterplots with a fitted line,
+titles, axis labels and units, reading the plotted sample, and PNG export. Core programming
+covers local and global definitions and references, scope, macro substitution,
+`foreach`, and simple `forvalues` loops. Trace, adapt, and explain short loops.
+Histograms, box plots, `while`, and nested loops are not required. Regression remains core Lecture 4
 material, alongside the workflow, cleaning, and combining topics from earlier lectures.
 
 See the [syllabus](../Introduction-to-Stata-Syllabus.md). Detailed exam instructions,
@@ -110,11 +119,11 @@ permitted resources, and AI rules are announced separately.
 ## Optional material
 
 - `session-03-combining-reshaping/optional-reshaping.do`: aggregation and reshaping.
-- `session-05-descriptives-graphics/optional-programs.do`: custom programs and city loops.
+- `session-05-descriptives-graphics/optional-programs.do`: while, custom programs, and city loops.
 - `session-05-descriptives-graphics/optional-regression-automation.do`: extended regression-cutoff analysis.
 - `session-05-descriptives-graphics/optional-graphics.do` and
-  `optional-graphics-exercise.do`: extra tables, a mean bar chart, and ungraded practice.
+  `optional-graphics-exercise.do`: extra tables, histograms, box plots, and ungraded practice.
 - `session-06-analysis-simulation/`: adjusted predictions, residuals, and resampling.
 
-These extensions add no exam requirements. Basic graph types taught in Lecture 5
-remain required even when an optional file also uses them.
+These extensions add no exam requirements. Only the basic line-plot and scatterplot
+skills in `graphics.do` are required graphics material.

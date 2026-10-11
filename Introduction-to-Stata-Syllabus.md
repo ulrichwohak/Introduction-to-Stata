@@ -69,17 +69,17 @@ By the end of the course, students will be able to:
   observation.
 - Run simple and multiple regressions, use categorical controls and log outcomes, and
   interpret coefficients and sample sizes as descriptive associations.
-- Distinguish local and global macros, use locals with foreach and simple forvalues
-  loops, and verify one iteration against manually written commands.
-- Create and interpret histograms, box plots, and scatterplots with a fitted line;
-  label samples and units, export figures, and read descriptive and regression output.
+- Define and reference local and global macros, explain their scope, and trace and
+  adapt short foreach and forvalues loops, checking one pass manually.
+- Create basic line plots and scatterplots with a fitted line; use sort for line
+  plots, label axes and units, export figures, and explain what is plotted.
 - Read unfamiliar Stata output and documentation and explain every submitted command and
   analytic decision.
 
 Basic regression, programming foundations, and basic graphics are part of the core
-teaching and exam scope. Writing while loops, reshaping, custom programs, extended
-regression-cutoff analysis, additional table exports, adjusted predictions, and resampling
-are outside the exam scope. While is demonstrated for recognition only.
+teaching and exam scope. Histograms, box plots, while loops, nested loops, reshaping,
+custom programs, extended regression-cutoff analysis, additional table exports,
+adjusted predictions, and resampling are optional and outside the exam scope.
 
 ## Learning activities and teaching methods
 
@@ -91,8 +91,10 @@ demonstration.
 
 The teaching sessions have two connected components:
 
-1. An annotated lecture do-file introduces the session's concepts.
-2. An exercise applies a variation of those concepts to real, anonymized hotel-price data.
+1. Annotated do-files introduce the concepts. Lecture 5 starts with data-free
+   programming practice, then opens a separate file for basic plots.
+2. An exercise practises the concepts using short programming tasks or real,
+   anonymized hotel-price data, with data selection supplied in checkpoint 4.
 
 Session 1's exercise is ungraded practice. Four individual, reproducible exercise attempts
 form the graded checkpoints during the teaching meetings. Checkpoint identifiers and
@@ -136,8 +138,8 @@ attempt is. Submission instructions and any make-up procedure are announced in c
 The individual final exam takes place during Session 6 on Monday, 19 October 2026,
 08:50–10:30. This is the original scheduled exam slot and is unchanged. It assesses
 the Stata concepts and reproducible workflow taught in the five teaching meetings,
-including basic graphics: histograms, box plots, scatterplots with a fitted line,
-labels, sample restrictions, interpretation, and PNG export. There is no new lecture
+including basic graphics: line plots with sort, scatterplots with a fitted line,
+titles, axis labels and units, reading the plotted sample, and PNG export. There is no new lecture
 or separate checkpoint in this meeting.
 
 The exam format, duration within the scheduled meeting, task-level marking scheme,
@@ -159,7 +161,7 @@ submitted line and conclusion.
 ## Course contents and schedule
 
 Lectures 1 and 2 and their exercises remain unchanged. The revised sequence keeps
-three separate lecture files: **combining data**, **running and interpreting
+three separate lecture modules: **combining data**, **running and interpreting
 regressions**, and **programming and graphics**. Lecture-folder numbers identify
 material rather than separate remaining dates.
 
@@ -194,15 +196,17 @@ material rather than separate remaining dates.
 
 ### Lecture 5 Programming basics and reproducible graphics
 
-- Taught on 12 October, after students have learned to run regressions manually.
-- Explain macros, text substitution, expressions, local scope, and global scope.
-- Practise `foreach` and simple `forvalues` loops; briefly demonstrate `while`.
-- Build histograms, box plots, and scatterplots with a fitted line; explain samples,
-  units, bin widths, distributions, and associations.
-- Use a city loop to label and export figures, then check one result manually.
-- Checkpoint 4 (10%): use locals and `foreach` to make guest-rating histograms for
-  Budapest and Zagreb, verify Budapest manually, and interpret the graphs.
-  Submit a do-file, log, and two city-specific PNGs. Allow 25 minutes.
+- Taught on 12 October, the final teaching meeting before the exam.
+- Start with `lecture.do`: data-free examples of locals, globals, substitution,
+  quotes, scope, and loop syntax. Spend 40 minutes on programming practice.
+- Trace `foreach` and simple `forvalues` loops one pass at a time; predict output,
+  change the list or repeated command, and check a pass manually.
+- Then use `graphics.do` for 30 minutes: basic line plots, scatterplots, and a
+  fitted line. Practise x/y order, sort, titles, axis labels, and PNG export.
+- Use short graphics exercises to change titles, axis variables, and plot layers.
+- Checkpoint 4 (10%): define macros, explain scope, trace a foreach loop, predict
+  a forvalues loop, and make one labelled line plot from supplied hotel data.
+  Submit a do-file, log, and one PNG. Allow 25 minutes, then five minutes for recap.
 - Materials: `session-05-descriptives-graphics`; the folder name is retained for links.
 
 ### Remaining meetings
@@ -213,17 +217,17 @@ The detailed agendas are in `schedule/session_plan.md`.
 
 The exam remains on **Monday, 19 October 2026, 08:50–10:30**, worth 60%.
 It covers the core material actually taught in the five teaching meetings, including
-regression, local macros, the local/global distinction, foreach and simple forvalues
-loops, and basic graphics. There is no new lecture or checkpoint in the
+regression, local and global macros, scope, foreach and simple forvalues loops,
+and basic line plots and scatterplots. There is no new lecture or checkpoint in the
 exam meeting. Detailed instructions will be provided separately.
 
 ### Optional reference material
 
-Reshaping, custom programs, extended regression-cutoff analysis, additional table
-exports, adjusted predictions, residual diagnostics, and resampling remain optional,
-ungraded reference. Optional files add no exam requirements; basic graph types taught
-in Lecture 5 remain required even if optional files also use them. Writing while loops
-is not required. Optional files are named in the lecture guides. The
+Histograms, box plots, while loops, nested loops, reshaping, custom programs,
+extended regression-cutoff analysis, additional table exports, adjusted predictions,
+residual diagnostics, and resampling remain optional, ungraded reference and add no
+exam requirements. The basic line-plot and scatterplot skills in Lecture 5's
+graphics.do remain required. Optional files are named in the lecture guides. The
 `session-06-analysis-simulation` files are supplementary examples, not the exam paper
 or an additional teaching session.
 

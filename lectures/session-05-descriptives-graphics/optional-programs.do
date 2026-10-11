@@ -4,12 +4,20 @@ set more off
 set varabbrev off
 
 * Optional extension, outside the 100-minute core class and checkpoint.
-* Lecture 5's core task uses locals and foreach to create and export graphics.
+* The core task practises macros and loops, then creates one basic line plot.
 capture mkdir "output"
 capture mkdir "output/logs"
 capture log close session05_optional
 log using "output/logs/session05_optional.log", name(session05_optional) text replace
 
+* Optional while example: test the condition before each pass.
+local counter = 1
+while `counter' <= 3 {
+    display `counter'
+    * Increase the counter so the condition eventually becomes false.
+    local counter = `counter' + 1
+}
+* For a known range such as 1 to 3, forvalues is simpler.
 use "data/derived/hotel_panel.dta", clear
 keep if accommodation_type == "Hotel" & price_per_night <= 1000
 

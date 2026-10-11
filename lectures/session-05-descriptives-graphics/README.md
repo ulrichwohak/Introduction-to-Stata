@@ -1,96 +1,85 @@
-# Lecture 5 Programming basics and reproducible graphics
+# Lecture 5 Programming first then basic plots
 
-Teaching date: 12 October 2026. Checkpoint 4 is worth 10% of the course score.
+12 October 2026, 08:50–10:30. This is the last teaching meeting; the exam is on
+19 October. Checkpoint 4 remains worth 10% and takes 25 minutes.
 
-Learn how macros and loops work, then use them to produce clear graphs from the
-hotel data. Type and run the examples together. Every command in `lecture.do`
-has an explanation; the file is a teaching reference, not a script to race through.
-
-## Learning goals
-
-- Distinguish a dataset variable from a macro, and local scope from global scope.
-- Read the command produced by macro substitution; distinguish text from calculation.
-- Use `foreach` for lists and `forvalues` for numerical sequences.
-- Recognize how a `while` loop stops; this is a brief demonstration, not a core task.
-- Create and interpret a histogram, a box plot, and a scatterplot with a fitted line.
-- Label axes, units, and samples; export graphs with distinct, reproducible filenames.
-- Use a local and a loop to make city-specific figures and verify one manually.
+Start with [lecture.do](lecture.do): short text and number examples, with no dataset
+or analysis. Students must be able to trace a loop before moving to
+[graphics.do](graphics.do). Finish with [exercise.do](exercise.do).
 
 ## Plan for the 100 minute meeting
 
 | Minutes | Activity |
 | --- | --- |
-| 0–5 | Repeat familiar summaries and identify the text that changes. |
-| 5–20 | Local macros, expansion, expressions, scope, and one global demonstration. |
-| 20–35 | Practise foreach; introduce forvalues; briefly demonstrate while and connect macros to a familiar regression. |
-| 35–65 | Build a histogram, box plot, and scatterplot; add a fitted line and explain each figure. |
-| 65–70 | Use a city loop to label and export comparable histograms. |
-| 70–95 | Individual programming and graphics checkpoint. |
-| 95–100 | Recap, questions, and submissions. |
+| 0–2 | Print text by hand; identify the part that changes. |
+| 2–10 | Define and read locals and globals; demonstrate quotes and selected-block scope. |
+| 10–30 | Trace foreach one pass at a time; change the list and loop body. |
+| 30–40 | Practise forvalues; predict output and explain each repeated command. |
+| 40–55 | Draw, label, and export a basic line plot; practise x/y order and sort. |
+| 55–70 | Draw a scatterplot; change an axis variable and add a fitted line. |
+| 70–95 | Individual checkpoint on macros, loops, and one line plot. |
+| 95–100 | Recap the exam scope, answer questions, and submit. |
 
-The same agenda appears in the [course session plan](../../schedule/session_plan.md#12-october-agenda),
-alongside the checkpoint requirements and exam scope.
+The [session plan](../../schedule/session_plan.md#12-october-agenda) uses the same agenda.
 
-Spend most loop practice on `foreach`. Show `in` and `of varlist`, then use
-`of local` for the graph loop. Keep `while` to a short counter demonstration.
-The full regression-cutoff analysis and custom programs are not part of this agenda.
+## Programming before analysis
 
-## Running the lecture
+Keep the initial macro explanation to about eight minutes: define and read one
+local (2 minutes), rerun its display line alone to show scope (2 minutes), compare
+a global and remove it (3 minutes), then check the two reference syntaxes (1 minute).
+Reuse the same local example; omit the separate text-versus-arithmetic demonstration.
+The following 30 minutes of loop practice reinforce substitution and local scope.
 
-Run `lecture.do` from the repository root with the instructor-supplied
-`data/derived/hotel_panel.dta`, or first run `do "scripts/00_master.do"` to create it.
-No completed exercise is needed. All data are local and the lesson works offline.
+Type and run one example at a time. Pause at each TRY prompt: students predict the
+output, change a line, and explain what happened. Ask them to identify the list,
+the loop local, and the repeated commands, then write out one pass without a loop.
+Keep repeating this until the syntax is clear; the examples are not a speed exercise.
 
-Run local definitions together with the commands using them. Separate selected-block
-runs in the Do-file Editor have separate local scopes. Globals are demonstrated and
-then removed; use locals for the working examples.
+Teach `foreach ... in`, then `foreach ... of local`, and simple `forvalues` ranges.
+Show why local definitions and their uses must run in the same selected block.
+Demonstrate a global across selections, then remove that named global. Explain the
+braces, indentation, and different quotes. No regression, nested loop, `while`,
+custom program, or data transformation is needed in the opening file.
 
-The lesson first keeps Hotel quotes with positive nightly prices up to EUR 1,000.
-Graphs restrict this further to EUR 500. These are sample choices, not claims that
-more expensive records are errors. Scatterplots also omit missing distances. Rows are
-price quotes, not distinct hotels; hotels with more quotes appear more often.
+## Basic plots
 
-The histogram introduces bin width and percentages. The box plot compares medians and
-spread across cities. The scatterplot adds a fitted line to connect graphics with
-regression; it does not establish causality. For city histograms, use the same bin
-boundaries and x-axis labels, and read the y-axis values because its scale can differ.
+Run `graphics.do` from the repository root with `data/derived/hotel_panel.dta`
+available. The master workflow creates it; no earlier exercise solution is needed.
 
-The six exported PNGs go to `output/figures/`: `session05_price_histogram.png`,
-`session05_price_box.png`, `session05_price_distance.png`, and
-`session05_price_Vienna.png`, `session05_price_Budapest.png`,
-`session05_price_Zagreb.png`. The lecture log is `output/logs/session05.log`.
+First connect six monthly quotes for Vienna hotel 21897 in January–June 2018.
+The records are one-night, non-holiday weekend quotes. `line y x, sort` connects
+them in month order. They are individual quotes, not a city average or a continuous
+price record. Then use Vienna Hotel quotes from January 2018 for a scatterplot of
+price against distance, restricted to positive nightly prices up to EUR 500 and
+observed distances. Add `lfit` as a familiar regression connection, not a new analysis.
 
-## Graded checkpoint 4
+The short practice prompts ask students to change a title, change an axis variable,
+and remove or add the fitted-line layer. Distinguish a line connecting observations
+from a fitted regression line. Logs and the two lecture PNGs go under `output/`.
 
-Adapt the price-histogram loop to **guest ratings in Budapest and Zagreb**. Keep
-Hotel quotes with positive nightly prices up to EUR 500 and nonmissing ratings.
-Define locals for the plotted variable and cities. Count each city's sample, make
-labelled histograms with half-point bins, and export one PNG per city. Verify
-Budapest manually and write a short interpretation. Allow 25 minutes.
+## Checkpoint 4
 
-Submit the completed `exercise.do`, `output/logs/session05_exercise.log`, and:
+The starter asks students to define and display a local and a global, explain scope,
+trace a two-city `foreach`, check one expanded command, and predict a simple
+`forvalues` loop's output. They then make one labelled line plot from a supplied
+six-row selection. There is no cleaning, city comparison, or regression task.
 
-- `output/figures/session05_exercise_rating_Budapest.png`
-- `output/figures/session05_exercise_rating_Zagreb.png`
+Submit the completed do-file, `output/logs/session05_exercise.log`, and
+`output/figures/session05_exercise_line.png`. Course materials and Stata help are
+allowed; generative AI is not. A complete, clearly documented, reproducible attempt
+can receive full credit even if the result is not perfect.
 
-The starter contains prompts, not solutions. Students may use Stata help and the
-course materials, but not generative AI. Assess a complete, clearly documented,
-reproducible attempt; perfect results are not required for full checkpoint credit.
-No global, forvalues, while, regression, or custom program is required for this task.
+## Exam scope and optional material
 
-## Exam scope and optional reference
+Programming: local and global definitions and references, scope, macro substitution,
+`foreach`, and simple `forvalues`. Be able to trace, adapt, and explain short loops.
+Graphics: basic line plots with `sort`, scatterplots with a fitted line, titles,
+axis labels and units, reading the plotted sample, and PNG export.
 
-Basic graphics are now part of the final exam scope: histograms, box plots,
-scatterplots and a fitted line, labels and units, sample restrictions, interpretation,
-and PNG export. Local macros, the local/global distinction, `foreach`, and simple
-`forvalues` loops are core programming material. The `while` demonstration is for
-recognition only; writing while loops and custom programs is not required in the exam.
+Histograms and box plots are optional and outside the exam scope, as are `while`,
+nested loops, custom programs, and extended regression automation. Optional files
+remain available for reference, not as extra material to finish before the exam:
 
-- `optional-regression-automation.do`: longer loops over regression price cutoffs.
-- `optional-programs.do`: city-specific regressions and a custom r-class program.
-- `optional-graphics.do`: extra descriptive tables and a mean bar chart, plus more graph examples.
-- `optional-graphics-exercise.do`: ungraded practice with tables and graphics.
-
-The optional files are not additional checkpoints or additional exam requirements.
-Their tables and advanced programming remain optional; the basic graph types taught
-in `lecture.do` are required even when an optional file also uses them.
+- `optional-graphics.do` and `optional-graphics-exercise.do`: extra tables and plots.
+- `optional-programs.do`: a while demonstration and advanced programming examples.
+- `optional-regression-automation.do`: repeated models at different price cutoffs.

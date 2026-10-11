@@ -15,7 +15,8 @@ run regressions manually → learn programming and produce graphics**. Reshaping
   a short guide. Folder numbers identify topic modules. On **5 October**,
   use Lecture 3 in `session-03-combining-reshaping` for combining, then the separate
   Lecture 4 in `session-04-regressions` for regressions. On **12 October**, use
-  Lecture 5 in `session-05-descriptives-graphics` for macros, loops, and basic graphics.
+  Lecture 5 in `session-05-descriptives-graphics`: start with `lecture.do` for data-free
+  macro and loop practice, then open `graphics.do` for basic line plots and scatterplots.
   Additional tables, regression automation, and custom programs remain optional reference.
   The Session 6 files extend regression to margins and resampling; those extensions are optional.
 - `data/raw/`: attributed hotel CSV files committed for reliable offline teaching.
@@ -44,7 +45,8 @@ run regressions manually → learn programming and produce graphics**. Reshaping
    ```
 
 To work on one class, open its `lecture.do` or `exercise.do` file from the corresponding
-folder under `lectures/`. The master workflow also verifies optional examples; running
+folder under `lectures/`. Lecture 5 has a separate `graphics.do` for its second part.
+The master workflow also verifies optional examples; running
 a file as part of that workflow does not make its topics required.
 
 ## Reproducibility contract
@@ -72,16 +74,16 @@ total). Checkpoint 2 covers combining, checkpoint 3 regression, and checkpoint 4
 programming and graphics. Submission details and any make-up arrangements are announced
 in class. The final in-class exam in Session 6 on 19 October (08:50–10:30) contributes
 60% and covers material taught in the five teaching meetings, including introductory
-regression, local macros, the local/global distinction, foreach and simple forvalues
-loops, and basic graphics. The graphics scope includes histograms, box plots,
-scatterplots with a fitted line, labels, sample restrictions, interpretation, and export.
-Writing while loops, reshaping, custom programs, extended regression-cutoff analysis,
+regression, local and global macros, scope, foreach and simple forvalues loops,
+and basic graphics. The graphics scope covers line plots with sort, scatterplots
+with a fitted line, titles, axis labels and units, reading the plotted sample, and export.
+Histograms, box plots, while loops, nested loops, reshaping, custom programs, extended regression-cutoff analysis,
 additional table exports, margins, and resampling are outside the exam scope.
 A total score of 60 or more is required to pass.
 
-For checkpoint 4, students use locals and a foreach loop to make guest-rating
-histograms for Budapest and Zagreb, verify one manually, and submit a do-file,
-log, and two PNGs. The [Lecture 5 guide](lectures/session-05-descriptives-graphics/README.md)
+For checkpoint 4, students define macros, explain scope, trace a foreach loop,
+predict a forvalues loop, and make one labelled line plot from supplied data.
+They submit a do-file, log, and one PNG. The [Lecture 5 guide](lectures/session-05-descriptives-graphics/README.md)
 gives the 25-minute task and submission filenames.
 
 See the [syllabus](Introduction-to-Stata-Syllabus.md) for the assessment outline and

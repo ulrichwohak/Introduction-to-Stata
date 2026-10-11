@@ -24,6 +24,7 @@ local pipeline ///
     "lectures/session-04-regressions/lecture.do" ///
     "lectures/session-03-combining-reshaping/optional-reshaping.do" ///
     "lectures/session-05-descriptives-graphics/lecture.do" ///
+    "lectures/session-05-descriptives-graphics/graphics.do" ///
     "lectures/session-05-descriptives-graphics/optional-programs.do" ///
     "lectures/session-05-descriptives-graphics/optional-regression-automation.do" ///
     "lectures/session-05-descriptives-graphics/optional-graphics.do" ///

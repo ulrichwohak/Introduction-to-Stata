@@ -4,7 +4,8 @@ set more off
 set varabbrev off
 
 * Optional extra tables and graphs; not a graded checkpoint.
-* The basic graph types taught in lecture.do are part of the exam scope.
+* Histograms, box plots, and bar charts are outside the revised exam scope.
+* Core line plots and scatterplots are taught separately in graphics.do.
 * Run from the repository root after the analysis data have been prepared.
 capture log close optional_graphics
 log using "output/logs/session05_optional_graphics.log", name(optional_graphics) text replace
@@ -28,6 +29,11 @@ histogram price_per_night if city == "Vienna" & price_per_night <= 500, ///
     title("Distribution of Vienna hotel prices") ///
     xtitle("Price per night (EUR)") ytitle("Percent")
 graph export "output/figures/session05_optional_price_histogram.png", replace width(1600)
+
+* A box plot compares medians and spread; points beyond whiskers need not be errors.
+graph box price_per_night if price_per_night <= 500, over(city) ///
+    title("Hotel price distributions by city") ytitle("Price per night (EUR)")
+graph export "output/figures/session05_optional_price_box.png", replace width(1600)
 
 graph bar (mean) price_per_night, over(city) ///
     title("Average hotel price by search city") ///
