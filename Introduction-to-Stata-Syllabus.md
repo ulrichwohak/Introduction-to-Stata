@@ -197,7 +197,7 @@ material rather than separate remaining dates.
 ### Lecture 5 Programming basics and reproducible graphics
 
 - Taught on 12 October, the final teaching meeting before the exam.
-- Start with `lecture.do`: data-free examples of locals, globals, substitution,
+- Start with `macros-and-loops.do`: data-free examples of locals, globals, substitution,
   quotes, scope, and loop syntax. Spend 40 minutes on programming practice.
 - Trace `foreach` and simple `forvalues` loops one pass at a time; predict output,
   change the list or repeated command, and check a pass manually.

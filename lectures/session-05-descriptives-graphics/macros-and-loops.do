@@ -1,5 +1,5 @@
 version 18.0
-* Lecture 5, part 1: programming syntax. No dataset is needed.
+* Lecture 5, part 1: locals, globals, and loops. No dataset is needed.
 * Type each short example together. Predict the output before running it.
 * Work from the repository root; move to graphics.do after the programming practice.
 
@@ -10,7 +10,7 @@ capture mkdir "output/logs"
 capture log close session05
 log using "output/logs/session05.log", name(session05) text replace
 
-* OPENING (TWO MINUTES)
+* OPENING
 * display prints text in the Results window. Double quotes surround the text.
 display "Hello Vienna"
 
@@ -25,7 +25,7 @@ display "Hello `place'"
 * Each selected block runs as a separate temporary do-file with its own locals.
 * An undefined local expands to empty text. Run definitions with their uses.
 
-* 2. COMPARE WITH A GLOBAL (SECTIONS 1 AND 2 TAKE ABOUT EIGHT MINUTES)
+* 2. COMPARE WITH A GLOBAL
 * A global is available in other do-file runs until removed or Stata closes.
 * Run these together, then select and rerun just the display line.
 global session05_message "Hello from a global"

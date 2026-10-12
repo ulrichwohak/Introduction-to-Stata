@@ -44,7 +44,7 @@ student's completed combining exercise.
 
 Teaching slot: **08:50–10:30**. Use the
 [Lecture 5 guide](../lectures/session-05-descriptives-graphics/README.md),
-[programming do-file](../lectures/session-05-descriptives-graphics/lecture.do),
+[programming do-file](../lectures/session-05-descriptives-graphics/macros-and-loops.do),
 [graphics do-file](../lectures/session-05-descriptives-graphics/graphics.do), and
 [checkpoint starter](../lectures/session-05-descriptives-graphics/exercise.do).
 

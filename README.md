@@ -15,7 +15,7 @@ run regressions manually → learn programming and produce graphics**. Reshaping
   a short guide. Folder numbers identify topic modules. On **5 October**,
   use Lecture 3 in `session-03-combining-reshaping` for combining, then the separate
   Lecture 4 in `session-04-regressions` for regressions. On **12 October**, use
-  Lecture 5 in `session-05-descriptives-graphics`: start with `lecture.do` for data-free
+  Lecture 5 in `session-05-descriptives-graphics`: start with `macros-and-loops.do` for data-free
   macro and loop practice, then open `graphics.do` for basic line plots and scatterplots.
   Additional tables, regression automation, and custom programs remain optional reference.
   The Session 6 files extend regression to margins and resampling; those extensions are optional.
@@ -45,7 +45,7 @@ run regressions manually → learn programming and produce graphics**. Reshaping
    ```
 
 To work on one class, open its `lecture.do` or `exercise.do` file from the corresponding
-folder under `lectures/`. Lecture 5 has a separate `graphics.do` for its second part.
+folder under `lectures/`. Lecture 5 uses `macros-and-loops.do` followed by `graphics.do`.
 The master workflow also verifies optional examples; running
 a file as part of that workflow does not make its topics required.
 

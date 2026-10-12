@@ -1,6 +1,6 @@
 version 18.0
 * Lecture 5, part 2: a line plot, a scatterplot, and a fitted line.
-* Run from the repository root after the programming practice in lecture.do.
+* Run from the repository root after the programming practice in macros-and-loops.do.
 * These examples use the existing textbook data; no new data preparation is taught.
 
 * Clear memory and set up separate graphics outputs and a log.

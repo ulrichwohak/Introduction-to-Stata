@@ -3,7 +3,7 @@
 12 October 2026, 08:50–10:30. This is the last teaching meeting; the exam is on
 19 October. Checkpoint 4 remains worth 10% and takes 25 minutes.
 
-Start with [lecture.do](lecture.do): short text and number examples, with no dataset
+Start with [macros-and-loops.do](macros-and-loops.do): short text and number examples, with no dataset
 or analysis. Students must be able to trace a loop before moving to
 [graphics.do](graphics.do). Finish with [exercise.do](exercise.do).
 
