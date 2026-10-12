@@ -7,7 +7,7 @@ local exercises ///
     "lectures/session-02-cleaning-transforming/exercise.do" ///
     "lectures/session-03-combining-reshaping/exercise.do" ///
     "lectures/session-04-regressions/exercise.do" ///
-    "lectures/session-05-descriptives-graphics/exercise.do" ///
+    "lectures/session-05-programming-graphics/exercise.do" ///
     "lectures/session-06-analysis-simulation/exercise.do"
 
 foreach exercise of local exercises {

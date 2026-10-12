@@ -17,7 +17,7 @@ or analysis. Students must be able to trace a loop before moving to
 | 30–40 | Practise forvalues; predict output and explain each repeated command. |
 | 40–55 | Draw, label, and export a basic line plot; practise x/y order and sort. |
 | 55–70 | Draw a scatterplot; change an axis variable and add a fitted line. |
-| 70–95 | Individual checkpoint on macros, loops, and one line plot. |
+| 70–95 | Individual checkpoint on macros, loops, a line plot, and a scatterplot. |
 | 95–100 | Recap the exam scope, answer questions, and submit. |
 
 The [session plan](../../schedule/session_plan.md#12-october-agenda) uses the same agenda.
@@ -59,13 +59,18 @@ from a fitted regression line. Logs and the two lecture PNGs go under `output/`.
 
 ## Checkpoint 4
 
-The starter asks students to define and display a local and a global, explain scope,
-trace a two-city `foreach`, check one expanded command, and predict a simple
-`forvalues` loop's output. They then make one labelled line plot from a supplied
-six-row selection. There is no cleaning, city comparison, or regression task.
+The starter has four short parts. Students define and display a local and a global,
+rerun the display commands without their definitions, and explain scope. They then
+predict and run a two-city `foreach` and a `forvalues` loop multiplying 1 to 3 by 10.
+For graphics, they make a labelled line plot for January–April instead of all six
+months, then a scatterplot of price against rating instead of distance. Both data
+selections are supplied; no cleaning or earlier exercise solution is needed.
+Short comments explain `sort` and what one scatterplot point represents.
+Adding `lfit` is optional and not needed for full credit.
 
-Submit the completed do-file, `output/logs/session05_exercise.log`, and
-`output/figures/session05_exercise_line.png`. Course materials and Stata help are
+Submit the completed do-file, `output/logs/session05_exercise.log`,
+`output/figures/session05_exercise_line.png`, and
+`output/figures/session05_exercise_scatter.png`. Course materials and Stata help are
 allowed; generative AI is not. A complete, clearly documented, reproducible attempt
 can receive full credit even if the result is not perfect.
 

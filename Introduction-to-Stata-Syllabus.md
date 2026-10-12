@@ -205,9 +205,10 @@ material rather than separate remaining dates.
   fitted line. Practise x/y order, sort, titles, axis labels, and PNG export.
 - Use short graphics exercises to change titles, axis variables, and plot layers.
 - Checkpoint 4 (10%): define macros, explain scope, trace a foreach loop, predict
-  a forvalues loop, and make one labelled line plot from supplied hotel data.
-  Submit a do-file, log, and one PNG. Allow 25 minutes, then five minutes for recap.
-- Materials: `session-05-descriptives-graphics`; the folder name is retained for links.
+  a forvalues loop, and make a labelled line plot and scatterplot from supplied hotel data.
+  Adding a fitted line is optional for this checkpoint. Submit a do-file, log, and two PNGs.
+  Allow 25 minutes, then five minutes for recap.
+- Materials: `session-05-programming-graphics`.
 
 ### Remaining meetings
 

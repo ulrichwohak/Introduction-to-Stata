@@ -15,7 +15,7 @@ run regressions manually → learn programming and produce graphics**. Reshaping
   a short guide. Folder numbers identify topic modules. On **5 October**,
   use Lecture 3 in `session-03-combining-reshaping` for combining, then the separate
   Lecture 4 in `session-04-regressions` for regressions. On **12 October**, use
-  Lecture 5 in `session-05-descriptives-graphics`: start with `macros-and-loops.do` for data-free
+  Lecture 5 in `session-05-programming-graphics`: start with `macros-and-loops.do` for data-free
   macro and loop practice, then open `graphics.do` for basic line plots and scatterplots.
   Additional tables, regression automation, and custom programs remain optional reference.
   The Session 6 files extend regression to margins and resampling; those extensions are optional.
@@ -82,8 +82,9 @@ additional table exports, margins, and resampling are outside the exam scope.
 A total score of 60 or more is required to pass.
 
 For checkpoint 4, students define macros, explain scope, trace a foreach loop,
-predict a forvalues loop, and make one labelled line plot from supplied data.
-They submit a do-file, log, and one PNG. The [Lecture 5 guide](lectures/session-05-descriptives-graphics/README.md)
+predict a forvalues loop, and make a labelled line plot and scatterplot from supplied data.
+They submit a do-file, log, and two PNGs. Adding a fitted line is optional for this checkpoint.
+The [Lecture 5 guide](lectures/session-05-programming-graphics/README.md)
 gives the 25-minute task and submission filenames.
 
 See the [syllabus](Introduction-to-Stata-Syllabus.md) for the assessment outline and

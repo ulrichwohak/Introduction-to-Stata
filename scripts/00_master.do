@@ -23,11 +23,11 @@ local pipeline ///
     "lectures/session-03-combining-reshaping/lecture.do" ///
     "lectures/session-04-regressions/lecture.do" ///
     "lectures/session-03-combining-reshaping/optional-reshaping.do" ///
-    "lectures/session-05-descriptives-graphics/macros-and-loops.do" ///
-    "lectures/session-05-descriptives-graphics/graphics.do" ///
-    "lectures/session-05-descriptives-graphics/optional-programs.do" ///
-    "lectures/session-05-descriptives-graphics/optional-regression-automation.do" ///
-    "lectures/session-05-descriptives-graphics/optional-graphics.do" ///
+    "lectures/session-05-programming-graphics/macros-and-loops.do" ///
+    "lectures/session-05-programming-graphics/graphics.do" ///
+    "lectures/session-05-programming-graphics/optional-programs.do" ///
+    "lectures/session-05-programming-graphics/optional-regression-automation.do" ///
+    "lectures/session-05-programming-graphics/optional-graphics.do" ///
     "lectures/session-06-analysis-simulation/lecture.do"
 
 foreach script of local pipeline {

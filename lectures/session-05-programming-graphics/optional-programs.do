@@ -4,7 +4,7 @@ set more off
 set varabbrev off
 
 * Optional extension, outside the 100-minute core class and checkpoint.
-* The core task practises macros and loops, then creates one basic line plot.
+* The core task practises macros and loops, then creates a line plot and scatterplot.
 capture mkdir "output"
 capture mkdir "output/logs"
 capture log close session05_optional

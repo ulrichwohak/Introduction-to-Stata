@@ -23,7 +23,8 @@ the October revision. For the current teaching order and exam scope, use the
 separate Lecture 4 on regressions are both taught on 5 October. Lecture 5 on
 programming foundations and basic graphics follows on 12 October, the last teaching
 meeting. Start with data-free macro and loop practice, then a separate graphics file.
-Checkpoint 4 practises macros and loops and asks for one basic line plot.
+Checkpoint 4 practises macros and loops and asks for a basic line plot and scatterplot.
+Adding a fitted line is optional for the checkpoint.
 
 Basic regression, line plots, and scatterplots with a fitted line are core exam
 material. Histograms, box plots, while loops, nested loops, reshaping, custom

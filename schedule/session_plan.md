@@ -12,14 +12,14 @@ Lectures 1 and 2 and their exercises remain unchanged. The revised sequence is:
 3. Lecture 5: data-free programming practice, then basic line plots and scatterplots.
 
 Lecture numbers identify separate sets of materials, not separate remaining dates.
-Lecture 4 uses `session-04-regressions`; the other folder paths are unchanged.
+Lecture 4 uses `session-04-regressions`; Lecture 5 uses `session-05-programming-graphics`.
 
 ## Remaining meetings
 
 | Date | Material | Assessment |
 | --- | --- | --- |
 | 5 October | Lecture 3 (`session-03-combining-reshaping`), then Lecture 4 (`session-04-regressions`) | Checkpoint 2 on combining; checkpoint 3 on regression |
-| 12 October | Lecture 5 (`session-05-descriptives-graphics`) | Checkpoint 4 on programming and graphics |
+| 12 October | Lecture 5 (`session-05-programming-graphics`) | Checkpoint 4 on programming and graphics |
 | 19 October, 08:50–10:30 | Final in-class exam | 60% of the course grade |
 
 The original exam date and scheduled meeting slot are unchanged.
@@ -43,10 +43,10 @@ student's completed combining exercise.
 ### 12 October agenda
 
 Teaching slot: **08:50–10:30**. Use the
-[Lecture 5 guide](../lectures/session-05-descriptives-graphics/README.md),
-[programming do-file](../lectures/session-05-descriptives-graphics/macros-and-loops.do),
-[graphics do-file](../lectures/session-05-descriptives-graphics/graphics.do), and
-[checkpoint starter](../lectures/session-05-descriptives-graphics/exercise.do).
+[Lecture 5 guide](../lectures/session-05-programming-graphics/README.md),
+[programming do-file](../lectures/session-05-programming-graphics/macros-and-loops.do),
+[graphics do-file](../lectures/session-05-programming-graphics/graphics.do), and
+[checkpoint starter](../lectures/session-05-programming-graphics/exercise.do).
 
 | Minutes | Activity |
 | --- | --- |
@@ -56,7 +56,7 @@ Teaching slot: **08:50–10:30**. Use the
 | 30–40 | Practise forvalues; predict output and explain each repeated command. |
 | 40–55 | Draw, label, and export a basic line plot; practise x/y order and sort. |
 | 55–70 | Draw a scatterplot; change an axis variable and add a fitted line. |
-| 70–95 | Individual checkpoint on macros, loops, and one line plot. |
+| 70–95 | Individual checkpoint on macros, loops, a line plot, and a scatterplot. |
 | 95–100 | Recap the exam scope, answer questions, and submit. |
 
 This is the last teaching meeting. Spend the first 40 minutes on programming,
@@ -88,19 +88,22 @@ invalidated by this revision. The course is Pass/Fail with a total-score pass th
 
 Exercises apply variations of the lecture and require interpretation and validation.
 No earlier exercise solution is an input. The revised checkpoints request do-files
-and separate logs; checkpoint 4 also requests one line-plot PNG. Reshaping is not required.
+and separate logs; checkpoint 4 also requests a line-plot PNG and a scatterplot PNG.
+Reshaping is not required.
 
 ### Checkpoint 4 on programming and graphics
 
 Allow **25 minutes**, worth **10%** of the course score. Students define and display
-a local and a global, explain scope, and remove their named global (4 minutes).
-They trace a two-city `foreach` and check one expanded command (8 minutes), then
-predict and run a simple `forvalues` loop (5 minutes). Finally, they draw and export
-one labelled line plot from a supplied six-row hotel selection and explain `sort`
-(8 minutes). No cleaning, city comparison, or regression is required.
+a local and a global, test their scope across selections, and remove their named
+global. They predict and run a two-city `foreach` and a `forvalues` loop multiplying
+1 to 3 by 10. They draw and export a labelled line plot for January–April and a
+scatterplot of price against rating, using supplied data selections. Short comments
+explain `sort` and what one point represents. Adding a fitted line is optional and
+not needed for full credit. No cleaning or earlier exercise solution is required.
 
-Submit the completed do-file, `output/logs/session05_exercise.log`, and
-`output/figures/session05_exercise_line.png`. Assess a complete, clearly
+Submit the completed do-file, `output/logs/session05_exercise.log`,
+`output/figures/session05_exercise_line.png`, and
+`output/figures/session05_exercise_scatter.png`. Assess a complete, clearly
 documented, reproducible attempt; perfect results are not required for full credit.
 
 ## Final exam scope
@@ -119,9 +122,9 @@ permitted resources, and AI rules are announced separately.
 ## Optional material
 
 - `session-03-combining-reshaping/optional-reshaping.do`: aggregation and reshaping.
-- `session-05-descriptives-graphics/optional-programs.do`: while, custom programs, and city loops.
-- `session-05-descriptives-graphics/optional-regression-automation.do`: extended regression-cutoff analysis.
-- `session-05-descriptives-graphics/optional-graphics.do` and
+- `session-05-programming-graphics/optional-programs.do`: while, custom programs, and city loops.
+- `session-05-programming-graphics/optional-regression-automation.do`: extended regression-cutoff analysis.
+- `session-05-programming-graphics/optional-graphics.do` and
   `optional-graphics-exercise.do`: extra tables, histograms, box plots, and ungraded practice.
 - `session-06-analysis-simulation/`: adjusted predictions, residuals, and resampling.
 
